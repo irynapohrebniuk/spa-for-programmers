@@ -6,10 +6,10 @@ export const rooms = () => {
 
     return roomsService.getRooms().then(pokoje => {
 
-            fragment.append('<h2>Rooms</h2><div class="row">');
+            fragment.append('<h2>Rooms</h2><div class="row"></div>');
             for (let i = 0; i < pokoje.length; i++) {
                 fragment
-                    .append(
+                    .find('div.row').append(
                         `<div class="card col-sm" style="width: 18rem;">
                         <img src="https://placeimg.com/640/240/14 class="card-img-top" alt="...">
                         <div class="card-body">
@@ -18,7 +18,7 @@ export const rooms = () => {
                         <a href="#" class="btn btn-primary">Zarezerwuj</a>
                         </div></div>`);
             }
-            fragment.append('</div>');
+
             return fragment;
 
         }

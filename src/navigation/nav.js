@@ -9,6 +9,7 @@ export const nav = () => {
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <span class="navbar-brand">IT SPA</span>
       <ul class="navbar-nav mr-auto"></ul>
+      <button class="btn btn-light text-dark">Ok</button>
     </nav>
   `);
 
@@ -19,9 +20,6 @@ export const nav = () => {
     });
 
     navbar.find('ul').append(navItems);
-
-
-
 
 
     return navbar;
