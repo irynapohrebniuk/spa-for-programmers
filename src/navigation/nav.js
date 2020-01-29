@@ -3,13 +3,13 @@ import { navItem } from './nav-item';
 import { routeChange } from '../router/route-change';
 import { routes } from '../router/routes';
 import { booking } from '../views/booking';
+import { navBasket } from './nav-basket';
 
 export const nav = () => {
     const navbar = $(`
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <span class="navbar-brand">IT SPA</span>
       <ul class="navbar-nav mr-auto"></ul>
-      <button class="btn btn-light text-dark">Ok</button>
     </nav>
   `);
 
@@ -17,9 +17,12 @@ export const nav = () => {
     const navItems = routes.map(route => {
         const { name, path } = route;
         return navItem(name, () => navbar.trigger(routeChange, { path: path }));
+
     });
 
     navbar.find('ul').append(navItems);
+    console.log(navItems);
+    navbar.append(navBasket);
 
 
     return navbar;

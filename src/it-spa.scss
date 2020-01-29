@@ -1,20 +1,7 @@
+$grid-gutter-widths: ( xs: 16px, md: 16px, );
+// Default Bootstrap gutter width variable.
+$grid-gutter-width: map-get($grid-gutter-widths, md);
 body {
-    padding-top: 50px;
+    margin: 0;
     background-color: lightgrey;
-}
-
-.basket {
-    position: absolute;
-    min-height: 10rem;
-    top: 0;
-    right: 0;
-    transition: all 0.3s ease-in-out;
-    background: rgba(255, 255, 255, $alpha: 0.5);
-    width: 0;
-    overflow: hidden;
-    &--show {
-        width: 18rem;
-        padding: 2rem 1.5rem;
-        transform: rotateY(-360deg);
-    }
 }
