@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { routes } from './routes';
 import { oops } from '../views';
 import { routeChange } from './route-change';
-import { roomsService } from '../common/rooms-service';
+//import { roomsService } from '../common/rooms-service';
 
 export class Router {
 
