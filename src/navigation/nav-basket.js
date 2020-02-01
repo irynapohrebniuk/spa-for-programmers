@@ -1,8 +1,7 @@
 import $ from 'jquery';
 
 export const navBasket = (click) => {
-    const navBasket = $('<i class="fas fa-camera"></i><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Basket</button>');
-    const modalBasket = $(`<!-- Modal -->
+    const navBasket = $(`<i class="fa fa-shopping-basket basket" data-toggle="modal" data-target="#exampleModalLong"></i>
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content text-black-50">
@@ -27,5 +26,5 @@ export const navBasket = (click) => {
     </div>`);
 
 
-    return navBasket.append(modalBasket);
+    return navBasket;
 };

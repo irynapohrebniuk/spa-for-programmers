@@ -21,27 +21,8 @@ export const nav = () => {
     });
 
     navbar.find('ul').append(navItems);
-    console.log(navItems);
     navbar.append(navBasket);
 
 
     return navbar;
 };
-
-
-//     const navItems = routes.map(route =>
-//         const { name = itemName, path = itemPath });
-//     console.log(navItems);
-//     for (let item of navItems) {
-//         const NavItem = navItem(
-//             itemName,
-//             () => navbar.trigger(routeChange, { path: itemPath }));
-
-//         navbar.find('ul').append(NavItem);
-//         console.log(NavItem);
-
-//         return navbar;
-//     };
-//     navbar.find('ul').append(navItems);
-//     return navbar;
-// };
