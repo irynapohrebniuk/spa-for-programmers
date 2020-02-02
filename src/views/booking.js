@@ -1,12 +1,12 @@
 import $ from 'jquery';
-
+import { cartContent } from '../components/cartContent';
 
 
 export const booking = () => {
     const fragment = $(new DocumentFragment());
-    fragment
-        .append('<h2>Booking</h2>');
-
+    const container = $('<div class="container"></div>');
+    container.append(cartContent);
+    fragment.append(container);
 
     return Promise.resolve(fragment);
 };
