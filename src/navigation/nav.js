@@ -4,6 +4,7 @@ import { routeChange } from '../router/route-change';
 import { routes } from '../router/routes';
 import { booking } from '../views/booking';
 import { cartButton } from '../components/cartModalWindow';
+import { navItemCart } from '../navigation/nav-item-cart';
 
 export const nav = () => {
     const navbar = $(`
@@ -15,13 +16,25 @@ export const nav = () => {
 
     // chcemy zbudowac tablice elementow navItem z odpowiednimi nazwami i callbackami
     const navItems = routes.map(route => {
-        const { name, path } = route;
-        return navItem(name, () => navbar.trigger(routeChange, { path: path }));
+            const { name, path } = route;
+            console.log("path: ", path);
+            return navItem(name, () => navbar.trigger(routeChange, { path: path }));
 
-    });
+        }
+
+    );
+
+
+    const navCart = navItemCart(() => navbar.trigger(routeChange, { path: '/booking' }));
+
+    console.log("navItems: ", navItems[0].html());
+    console.log("navCart: ", navCart.html());
 
     navbar.find('ul').append(navItems);
-    navbar.append(cartButton);
+    navbar.find('ul').append(navCart);
+
+    console.log("navbar: ", navbar.html());
+    //  navbar.append(cartButton);
 
     //cartButton.popover();
 

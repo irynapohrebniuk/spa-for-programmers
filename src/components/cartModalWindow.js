@@ -1,10 +1,9 @@
 import $ from 'jquery';
+import { cartEmpty } from '../components/cart-empty';
 
 export const cartButton = () => {
 
     const fragment = $(new DocumentFragment());
-
-
 
 
     const span = $("<span></span>")
@@ -25,6 +24,7 @@ export const cartButton = () => {
 
     span.append(button);
     fragment.append(span);
+    fragment.append(cartEmpty);
 
     return fragment;
 
