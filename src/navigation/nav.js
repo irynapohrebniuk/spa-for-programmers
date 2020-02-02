@@ -3,7 +3,7 @@ import { navItem } from './nav-item';
 import { routeChange } from '../router/route-change';
 import { routes } from '../router/routes';
 import { booking } from '../views/booking';
-import { navBasket } from './nav-basket';
+import { cartButton } from '../components/cartModalWindow';
 
 export const nav = () => {
     const navbar = $(`
@@ -21,8 +21,9 @@ export const nav = () => {
     });
 
     navbar.find('ul').append(navItems);
-    navbar.append(navBasket);
+    navbar.append(cartButton);
 
+    //cartButton.popover();
 
     return navbar;
 };

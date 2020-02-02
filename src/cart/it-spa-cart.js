@@ -6,6 +6,8 @@ export const itSpaCart = () => {
 
     cookieStore.addEventListener('change', (event) => {
         const novaZawartosc = cart.get();
-        // ... i poprawiam wyswietlanie przez kosz informacje
+        if (novaZawartosc !== undefined) {
+
+        }
     });
 };

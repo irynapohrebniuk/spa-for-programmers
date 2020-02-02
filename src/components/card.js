@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { itSpaCart } from "../cart/it-spa-cart";
 
 
 export const card = (title) => {

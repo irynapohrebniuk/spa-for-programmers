@@ -1,6 +1,7 @@
 export class Cart {
     constructor() {
         this.key = 'IT_SPA_CART';
+        this.cookieStorage;
 
         // cookieStore.addEventListener('change',(event) => console.log(event));
     }
@@ -11,23 +12,24 @@ export class Cart {
         // PO: ['key1 = val1', 'key - val2', ...
         const itSpaCookie = cookies.find(cookie => cookie.startsWith(this.key));
         // PO: 'IT_SPA_CART = wartosc lub undefined
+        this.cookieStorage = itSpaCookie;
         return itSpaCookie;
     }
 
     exists() {
-        return this.cookie() !== undefined;
+        return cookieStorage !== undefined;
     }
 
     get() {
-        if (this.exists()) {
-            const itSpaCookie = this.cookie(); // 'IT_SPA_CART = [1,2,2]'
+        const itSpaCookie = this.cookie(); // 'IT_SPA_CART = [1,2,2]'
+
+        if (itSpaCookie !== undefined) {
             const cookieValue = itSpaCookie.split('=')[1]; //['IT_SPA_CART','[1,2,2]']
-            const parsedValue = JSON.parse(cookieValue); // wartosc
-            return parsedValue;
-        } else {
-            this.set([]);
+            parsedValue = JSON.parse(cookieValue); // wartosc
         }
+        return parsedValue;
     }
+
 
     set(value) {
         const stringifieldValue = JSON.stringify(value);
