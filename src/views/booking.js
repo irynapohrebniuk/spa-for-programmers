@@ -8,8 +8,9 @@ export const booking = () => {
     const container = $('<div class="container"></div>');
     container.append(cartContent);
 
+    // if ()   fragment.append(cartEmpty); else 
     fragment.append(container);
-    fragment.append(cartEmpty);
+
 
 
     return Promise.resolve(fragment);

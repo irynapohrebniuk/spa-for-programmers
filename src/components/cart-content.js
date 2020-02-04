@@ -1,15 +1,21 @@
 import $ from 'jquery';
+import { getService } from '../common/get-service';
 
 export const cartContent = () => {
+    const typeOfService = "rooms";
+    const id = 1;
+
     const fragment = $(new DocumentFragment());
-    const columnNames = ['lp', 'Nazwa produktu', 'Ilość', 'Cena', 'Wartość'];
-    // const tableTitle = "Twój koszyk";
-    // const tableBody = $('<tbody>');
+
+    const container = $('<div class="container"></div>');
+    const content = $('<h3 class="text-center m-3">Twój koszyk</h3>');
+    container.append(content);
+
+    const columnNames = ['lp', 'Nazwa produktu', 'Ilość', 'Cena', 'Wartość', 'Usunąć'];
     const tableRow = $('<tr>');
     const tableTh = $('<th>');
-    // const tableTd = $('<td>');
 
-    const container = $('<div>');
+    //  const container = $('<div>');
     const table = $('<table>').addClass('table table-hover');
 
     const tHeadRow = $('<thead>');
@@ -24,41 +30,27 @@ export const cartContent = () => {
 
     const tBody = $('<tbody>');
 
-    tBody.append(createDataRow());
-    tBody.append(createDataRow());
+    const createRow = getService.getServices(typeOfService, id)
+        .then(services => {
+            console.log("services: ", services);
+            const { name, price } = services[id];
+            console.log("service: ", services[id]);
+            let tr = $('<tr>');
+            for (let i = 0; i < 5; i++) {
+                const td = $('<td>').text("ff");
+                tr.append(td);
+            }
+
+            return tBody.append(tr);
+        })
+
+
     table.append(tBody);
 
-
-    fragment.append(table);
-    container.append(fragment);
-
-
-    // for (const name of columnNames) {
-    //     const tableTh = $('<th>').text(name);
-    //     tHeadRow.append(tableTh);
-    // }
-
-    console.log("tHeadRow", container.html());
-
-    // const tableComponents = table
-    //     .append(tableHeader)
-    //     .append(tableBody);
-    // table.append(tableComponents);
-
-
-    // table.append(tableHeader);
-
-    fragment.append(table);
+    container.append(table);
+    fragment.append(container);
+    //  container.append(fragment);
+    //   fragment.append(table);
 
     return fragment;
-}
-
-
-function createDataRow() {
-    let tr = $('<tr>');
-    for (let i = 0; i < 5; i++) {
-        const td = $('<td>').text("jbjkhv");
-        tr.append(td);
-    }
-    return tr;
 }
