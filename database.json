@@ -1,5 +1,15 @@
 {
-    "users": [],
+    "users": [{
+            "username": "Alex",
+            "email": "alex@example.com",
+            "password": "000"
+        },
+        {
+            "username": "Ira",
+            "email": "ira@example.com",
+            "password": "111"
+        }
+    ],
     "rooms": [{
             "id": 1,
             "name": "Pokój unarny",

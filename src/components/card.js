@@ -34,7 +34,8 @@ const cardButton = () => {
         .css("width", "60%")
         .html('Zarezerwuj')
         .on("click", function() {
-            alert("The button was clicked.");
+            document.cookie = "key2=njnjb,key=knjnjn";
+            alert(document.cookie);
         });
     return button;
 }

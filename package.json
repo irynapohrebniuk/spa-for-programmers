@@ -13,7 +13,8 @@
     "devDependencies": {
         "json-server": "^0.15.1",
         "node-sass": "^4.13.1",
-        "parcel-bundler": "^1.12.4"
+        "parcel-bundler": "^1.12.4",
+        "sass": "^1.26.2"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.12.0",
