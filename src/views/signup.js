@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import {getService} from '../common/get-service';
 
-export const login = () => {
+export const signup = () => {
 
     const fragment = $(new DocumentFragment());
     const container = $('<div class="container form-container"></div>');
@@ -33,7 +33,7 @@ export const login = () => {
         const email = $('#inputEmail').val();
         const password = $('#inputPassword').val();
         console.log("email: ", email, " | password: ", password);
-
+        // Add the new user to users.json
         let request = $.ajax({
             method: "POST",
             url: "http://localhost:3004/users",

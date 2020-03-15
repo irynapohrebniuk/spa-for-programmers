@@ -7,6 +7,11 @@ export const getService = {
     getServiceInfo(typeOfService, id) {
         return fetch("http://localhost:3000/" + typeOfService + "/" + id)
             .then(response => response.json());
+    },
+
+    getUsers() {
+        return fetch("http://localhost:3004/users")
+            .then(response => response.json())
     }
 
 }
