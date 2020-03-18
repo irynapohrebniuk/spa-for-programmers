@@ -2,32 +2,36 @@ import $ from 'jquery';
 import { navItem } from './nav-item';
 import { routeChange } from '../router/route-change';
 import { routes } from '../router/routes';
-import { booking } from '../views/booking';
 import { navItemCart } from '../navigation/nav-item-cart';
+import { navLogin } from '../navigation/nav-item-login';
 
 export const nav = () => {
     const navbar = $(`
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <span class="navbar-brand">IT SPA</span>
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+    <span class="navbar-brand logo">
+    </span>
       <ul class="navbar-nav mr-auto"></ul>
     </nav>
   `);
 
     // chcemy zbudowac tablice elementow navItem z odpowiednimi nazwami i callbackami
-    const navItems = routes.map(route => {
-        const { name, path } = route;
+    const mainMenuItems = routes.map(route => {
+        const { name, path, data } = route;
         //  console.log("path: ", path);
-        if (path !== '/booking')
+        if (data.group == 'main-menu')
             return navItem(name, () => navbar.trigger(routeChange, { path: path }));
     });
-    navbar.find('ul').append(navItems);
+    navbar.find('ul').append(mainMenuItems);
     // create the icon of cart in navigation
 
+    const userMenu = $('<div class="float-right" id="userMenu"></div>');
+
+    const itemLogin = navLogin(() => navbar.trigger(routeChange, { path: '/login' }));
+    userMenu.append(itemLogin);
     const navCart = navItemCart(() => navbar.trigger(routeChange, { path: '/booking' }));
-    // console.log("navItems: ", navItems[0].html());
-    // console.log("navCart: ", navCart.html());
-    navbar.append(navCart);
-    // console.log("navbar: ", navbar.html());
+    userMenu.append(navCart);
+
+    navbar.append(userMenu);
 
 
     return navbar;

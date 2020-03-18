@@ -19,6 +19,16 @@
       "email": "ira@i.com",
       "password": "$2a$10$TnVkcQ5W9BTOy71hyrQiousHOnw.WATlp3iX3XuTqaQ7DlqQu3HN2",
       "id": 4
+    },
+    {
+      "email": "iryna@gmail.com",
+      "password": "$2a$10$XXaeDSELonq8p6Cx02spMOzSeiH62RaATvRShEB1ZFjcRE4pQ8YjG",
+      "id": 5
+    },
+    {
+      "email": "alex@gmail.com",
+      "password": "$2a$10$WLqq8.fdqupI/YyszHAtj.xlg9t5xf4.wU2TyvwAKGMv27rJGCbTi",
+      "id": 6
     }
   ]
 }
