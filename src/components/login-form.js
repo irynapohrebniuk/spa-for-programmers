@@ -2,12 +2,11 @@ import $ from "jquery";
 import { routeChange } from "../router/route-change";
 import { navItemAccount } from "../navigation/nav-item-account";
 import { alert } from "../components/alert";
-import { signup } from "../views/signup";
 
 export const loginForm = (title, buttonTitle) => {
     const fragment = $(new DocumentFragment());
-    const container = $('<div></div>');
-    const form = $(
+
+    const loginForm = $(
         `<form>
         <h1 class="h3 mb-3 font-weight-normal">${title.toUpperCase()}</h1>
         <label for="inputEmail" class="sr-only">Email address</label>
@@ -25,7 +24,7 @@ export const loginForm = (title, buttonTitle) => {
       </form>`
     );
 
-    form.submit(function (event) {
+    loginForm.submit(function (event) {
 
         // Stop loginForm from submitting normally
         event.preventDefault();
@@ -43,7 +42,7 @@ export const loginForm = (title, buttonTitle) => {
 
         request.done(function (msg) {
             console.log("login");
-            form.trigger(routeChange, { path: '/rooms' });
+            loginForm.trigger(routeChange, { path: '/rooms' });
             $("#login").remove();
             $("#userMenu").prepend(navItemAccount);
         });
@@ -53,12 +52,13 @@ export const loginForm = (title, buttonTitle) => {
             console.log("42: fail().status: " + textStatus);
             console.log("42: fail().error: " + error);
             const alertMessage = alert();
-            container.append(alertMessage);
+            loginForm.remove();
+            ($("#login_form")).append(alertMessage);
 
         });
     });
 
-    container.append(form);
-    fragment.append(container);
+
+    fragment.append(loginForm);
     return fragment;
 }

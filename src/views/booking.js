@@ -5,7 +5,7 @@ import { cartEmpty } from '../components/cart-empty';
 
 export const booking = () => {
     const fragment = $(new DocumentFragment());
-    const container = $('<div class="container"></div>');
+    const container = $('<div class="container-fluid"></div>');
     container.append(cartContent);
 
     // if ()   fragment.append(cartEmpty); else 

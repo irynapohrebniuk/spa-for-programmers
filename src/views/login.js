@@ -1,27 +1,34 @@
 import $ from 'jquery';
 import { loginForm } from "../components/login-form";
-import { signup } from "./signup";
 import { routeChange } from "../router/route-change";
 import { button } from "../navigation/button";
 
 export const login = () => {
-    const title = "Log in";
-    const buttonTitle = "Log in";
     const fragment = $(new DocumentFragment());
+
+    // the main container
     const container = $('<div class="container-fluid"></div>');
+
+    // bootstrap grid
     const row = $('<div class="row"></div>');
     const column_1 = $('<div class="col m-3"></div>');
-    const column_2 = $('<div class="col m-3"></div>');
-    column_2.append(loginForm(title, buttonTitle));
+    const column_2 = $('<div class="col m-3" id="login_form"></div>');
     const column_3 = $('<div class="col m-3"></div>');
     const column_4 = $('<div class="col m-3"></div>');
-    const text = $(`<div><h1 class="h3 mb-3 font-weight-normal">REGISTER</div><div>If you still don't have a SPA account, use this option to access the registration form.</div><div>By giving us your details, purchasing in SPA will be faster and an enjoyable experience.</div>`);
 
-    const registerButton = button(()=> container.trigger(routeChange, { path: '/signup' }));
+    // login form in the left
+    const loginTitle = "Log in";
+    const loginButtonName = "Log in";
+    column_2.append(loginForm(loginTitle, loginButtonName));
 
-    column_3.append(text);
+    // register information in the right
+    const register_info = $(`<div><h1 class="h3 mb-3 font-weight-normal">REGISTER</div><div>If you still don't have a SPA account, use this option to access the registration form.</div><div>By giving us your details, purchasing in SPA will be faster and an enjoyable experience.</div>`);
+    const registerButtonName = 'CREATE ACCOUNT';
+    const registerButton = button(registerButtonName, () => container.trigger(routeChange, { path: '/signup' }));
+    column_3.append(register_info);
     column_3.append(registerButton);
 
+    // appending columns to the row
     row.append(column_1);
     row.append(column_2);
     row.append(column_3);
