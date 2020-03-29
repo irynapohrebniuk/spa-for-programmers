@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import { itSpaCart } from "../cart/it-spa-cart";
 import { Bucket } from "../bucket";
+import { cartContent } from "./cart-content";
 
 
 export const card = (room) => {

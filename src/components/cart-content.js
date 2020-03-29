@@ -1,11 +1,10 @@
 import $ from 'jquery';
-import { buttonDelete } from '../components/buttonDelete';
+import {buttonDelete} from './button-delete';
 
-export const cartContent = () => {
-
+export var cartContent = (rooms) => {
     const fragment = $(new DocumentFragment());
-
     const container = $('<div class="cart-items"></div>');
+
     const content = $('<h3 class="text-center m-3">Twój koszyk</h3>');
     container.append(content);
 
@@ -16,12 +15,28 @@ export const cartContent = () => {
         const td = $('<div class="col-sm"></div>').text(name);
         tr.append(td);
     }
-    container.append(createRow);
-    container.append(createRow);
-    container.append(createRow);
 
 
+    for (let room of rooms) {
+        container.append(createCartItem(room));
+        console.log("Room of rooms: ", room);
+    }
 
+    function createCartItem(room) {
+        const tr = $('<div class="row cart-item"></div>');
+        const td_id = $(`<div id="id" class="col-sm">${room.id}</div>`);
+        const td_name = $(`<div id="name" class="col-sm">${room.name}</div>`);
+        const td_price = $(`<div id="price" class="col-sm">${room.price}</div>`);
+        const td_quantity = $(`<div id="quantity" class="col-sm"></div>`);
+        const input = $('<input type="number" class="input-group-sm" value="1">');
+        $('input').change((event) => updateCartTotal(event.target));
+        td_quantity.append(input);
+        const td_total_price = $('<div id="total_price" class="col-sm"></div>');
+        td_total_price.text('4');
+        tr.append(td_id, td_name, td_price, td_quantity, td_total_price);
+        tr.append(buttonDelete(room.id));
+        return tr;
+    }
 
     fragment.append(container);
 
@@ -36,51 +51,6 @@ export const cartContent = () => {
     return fragment;
 }
 
-
-// ----------------------------------------------------------------------------------
-
-function createRow() {
-
-    const tr = $('<div class="row cart-item"></div>');
-    const ids = { 'id': 1, 'name': "pokoj", 'price': 23 };
-
-    // for (const id in ids) {
-    //     const td = $(`<div id=${id} class="col-sm">${ids[id]}</div>`);
-    //     tr.append(td);
-    // }
-
-
-    const td_id = $(`<div id="id" class="col-sm">${ids.id}</div>`);
-    const td_name = $(`<div id="name" class="col-sm">${ids.name}</div>`);
-    const td_price = $(`<div id="price" class="col-sm">${ids.price}</div>`);
-    const td_quantity = $(`<div id="quantity" class="col-sm"></div>`);
-    const input = $('<input type="number" class="input-group-sm" value="1"></input>');
-    $('input').change((event) => updateRow(event.target));
-    td_quantity.append(input);
-    const td_total_price = $('<div id="total_price" class="col-sm"></div>');
-    td_total_price.text('4');
-    tr.append(td_id, td_name, td_price, td_quantity, td_total_price);
-    tr.append(buttonDelete);
-
-
-    updateCartTotal();
-
-    return tr;
-
-}
-
-
-
-
-// function updateRow(target) {
-//     console.log("target", target);
-//     let inputValue = $('input').val();
-//     let price = $(target.parentElement.parentElement).find('#price').html();
-//     console.log(price);
-//     const totalPrice = inputValue * price;
-//     $("#total_price").html(totalPrice);
-
-// }
 
 function updateCartTotal() {
     const prices = $("input").val();

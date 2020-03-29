@@ -12,10 +12,15 @@ export var Bucket = (function() {
                 return rooms;
             },
 
-            addRoom(id, roomName) {
+            isEmpty() {
+                return rooms.length === 0;
+            },
+
+            addRoom(id, name, price) {
                 const room = {
                     id: id,
-                    name: roomName
+                    name: name,
+                    price: price
                 }
 
                 rooms.push(room);
