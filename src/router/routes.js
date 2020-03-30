@@ -10,5 +10,4 @@ export const routes = [
     { name: 'Booking', path: '/booking', data: {group: "booking"}, component: booking },
     { name: 'Auth', path: '/login', data: {group: "login"}, component: login },
     { name: 'Sign up', path: '/signup', data: {group: "signup"}, component: signup }
-
 ];

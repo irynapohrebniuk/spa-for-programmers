@@ -1,14 +1,12 @@
 import $ from 'jquery';
 import { Bucket } from "../bucket";
-import { cartContent } from "./cart-content";
-
 
 export const card = (room) => {
     const fragment = $(new DocumentFragment());
     fragment
         .append(
             `
-            <div class="col-md-4 col-sm-6 col-lg-3 p-1 m-1">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div id="room-${room.id}" class="card">
                     <div class="card-body">
                         <h5 class="card-title">

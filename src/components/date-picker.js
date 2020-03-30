@@ -1,15 +1,15 @@
 import $ from 'jquery';
+import 'air-datepicker/dist/js/datepicker.min';
+import 'air-datepicker/dist/js/i18n/datepicker.pl'
+
 
 export const datePicker = () => {
 
-    const datePicker = $(
-        `
-  <div class="row">
-    <div class='col-sm-3'>
+    const datePicker = `
       <div class="form-group">
          <!-- Datepicker as text field -->
           <div class="input-group date" >
-            <input type="text" class="spa-datepicker form-control" 
+            <input type="text" class="my-datepicker form-control" 
             data-date-format="dd.mm.yyyy"
             placeholder="dd.mm.yyyy" 
             data-multiple-dates="2"
@@ -17,13 +17,13 @@ export const datePicker = () => {
             data-position="right top">
           </div>
       </div>
-    </div>
-  </div>
 `
-    );
-
-
-
-    return  datePicker;
-
+    return datePicker;
 }
+
+
+
+
+
+
+

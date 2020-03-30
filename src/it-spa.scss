@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i&display=swap');
 
+$grid-columns:      12;
+$grid-gutter-width: 30px;
+
+$grid-breakpoints: (
+    // Extra small screen / phone
+        xs: 0,
+    // Small screen / phone
+        sm: 576px,
+    // Medium screen / tablet
+        md: 768px,
+    // Large screen / desktop
+        lg: 992px,
+    // Extra large screen / wide desktop
+        xl: 1200px
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+);
+
+
 body {
     margin: 0;
     background-color: lightgrey;
@@ -9,15 +33,15 @@ body {
     padding-top: 100px;
 }
 
-.form-container {
-    text-align: center;
-    min-width: 250px;
-    width: 30%;
-}
+//.form-container {
+//    text-align: center;
+////    min-width: 250px;
+//    width: 30%;
+//}
 
-.column {
-    width: 30%;
-}
+//.column {
+//    width: 30%;
+//}
 
 .footer {
     position: fixed;

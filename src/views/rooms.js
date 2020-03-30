@@ -6,22 +6,31 @@ import {datePicker} from "../components/date-picker";
 export const rooms = () => {
 
     const fragment = $(new DocumentFragment());
-
+    fragment.append(`
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3 pt-2 bg-light" id="leftLayout"></div>
+            
+            <div class="col-sm-12 col-md-6 col-lg-9 justify-content-center">
+                <div class="row" id="rightLayout"></div>
+            </div>
+          </div>
+        </div>`);
+    fragment.find('#leftLayout').append(datePicker);
     const typeOfService = "rooms";
-    fragment.append('<div class="container-fluid"><h2 class="text-center mt-2">Rooms</h2><div class="row  justify-content-center"></div></div>');
 
     const promise = getService.getServices(typeOfService)
         .then(rooms => {
-            console.log("rooms: ", rooms);
             for (let i = 0; i < rooms.length; i++) {
                 let room = rooms[i];
-                fragment.find('div.row').append(card(room));
-
+                fragment
+                    .find('#rightLayout')
+                    .append(card(room));
             }
-
             return fragment;
         });
 
-    return promise;
+    return Promise.resolve(promise);
+
 
 }
