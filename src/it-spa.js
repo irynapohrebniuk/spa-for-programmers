@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './it-spa.scss';
 import $ from 'jquery';
+
 import { Router } from './router/router';
 import { nav } from "./navigation/nav";
 

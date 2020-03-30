@@ -67,13 +67,18 @@ input:valid {
 }
 
 .v-mid {
+    display: block;
     position: absolute;
+    right: 0;
     top: 100px;
-    width: 400px;
+    width: 500px;
     padding: 3%;
     margin: 0 auto;
     border: 1px solid black;
+    background-color: black;
+    color: white;
 }
+
 
 //.alert div {
 //    margin: 0 16px;
@@ -102,6 +107,7 @@ input:valid {
     align-items: center;
     justify-content: center;
 }
+
 .opct p {
     margin-bottom: 0;
 }

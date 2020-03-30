@@ -1,10 +1,16 @@
 import $ from 'jquery';
+import {cart} from "../components/cart";
 
-export const navItemCart = (click) => {
+export const navItemCart = (event) => {
     const navItemCart = $('<span id="cart"></span>');
     const anchor = $('<a class="btn btn-link text-light"></a>');
     const icon = $('<i class="fas fa-shopping-cart"></i>');
-    anchor.append(icon).on('click', click);
+    const cartIcon = anchor.append(icon);
+    cartIcon.on('click', event)
+            .hover(function () {
+                $('body').append(cart);
+            });
+
     navItemCart.append(anchor);
 
     return navItemCart;
