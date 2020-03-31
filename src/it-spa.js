@@ -4,6 +4,7 @@ import $ from 'jquery';
 
 import { Router } from './router/router';
 import { nav } from "./navigation/nav";
+import {cartModal} from "./components/cart-modal";
 
 const main = $('main');
 
@@ -13,3 +14,4 @@ router.mount(main);
 router.init();
 
 main.before(nav());
+main.before(cartModal());

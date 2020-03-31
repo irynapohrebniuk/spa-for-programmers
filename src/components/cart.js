@@ -4,7 +4,7 @@ import {cartContent} from "./cart-content";
 import {cartEmpty} from "./cart-empty";
 
 export const cart = () => {
-    const modalCart = $('<div id="modalCart" class="v-mid"></div>');
+    const modalCart = $('<div id="modalCart" class="modalCart hidden"></div>');
     let bucket = Bucket.getInstance();
     let content = () => {
         if (!bucket.isEmpty()) {
@@ -16,12 +16,7 @@ export const cart = () => {
     }
 
     modalCart.append(content);
-    const button = $('<button id="close" class="float-right">close</button>');
 
-    button.click(function () {
-        $(this).parent().remove();
-    });
 
-    modalCart.prepend(button);
     return modalCart;
 }

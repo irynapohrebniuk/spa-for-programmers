@@ -4,14 +4,10 @@ import { routeChange } from '../router/route-change';
 import { routes } from '../router/routes';
 import { navItemCart } from '../navigation/nav-item-cart';
 import { navLogin } from '../navigation/nav-item-login';
-import {Bucket} from "../bucket";
-import {cartContent} from "../components/cart-content";
-import {cartEmpty} from "../components/cart-empty";
-import {cart} from "../components/cart";
 
 export const nav = () => {
     const navbar = $(`
-    <nav class="navbar navbar-expand navbar-dark bg-dark opacity-80 fixed-top">
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
     <span class="navbar-brand logo">
     </span>
       <ul class="navbar-nav mr-auto"></ul>
@@ -33,12 +29,7 @@ export const nav = () => {
     const itemLogin = navLogin(() => navbar.trigger(routeChange, { path: '/login' }));
     userMenu.append(itemLogin);
     const navCart = navItemCart(() => navbar.trigger(routeChange, { path: '/booking' }));
-    // navCart.mouseenter(function () {
-    //      $('body').append(cart);
-    // });
-    // navCart.mouseleave(function () {
-    //     $('body').remove(cart);
-    // });
+
     userMenu.append(navCart);
 
     navbar.append(userMenu);

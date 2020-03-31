@@ -16,11 +16,12 @@ export var Bucket = (function() {
                 return rooms.length === 0;
             },
 
-            addRoom(id, name, price) {
+            addRoom(id, name, price, quantity) {
                 const room = {
                     id: id,
                     name: name,
-                    price: price
+                    price: price,
+                    quantity: quantity
                 }
 
                 rooms.push(room);

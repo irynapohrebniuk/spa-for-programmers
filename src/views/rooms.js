@@ -9,7 +9,7 @@ export const rooms = () => {
     fragment.append(`
         <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-3 pt-2 bg-light" id="leftLayout"></div>
+            <div class="col-sm-12 col-md-6 col-lg-3 pt-3 bg-light" id="leftLayout"></div>
             
             <div class="col-sm-12 col-md-6 col-lg-9 justify-content-center">
                 <div class="row" id="rightLayout"></div>

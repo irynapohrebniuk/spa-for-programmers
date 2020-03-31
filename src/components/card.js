@@ -6,7 +6,7 @@ export const card = (room) => {
     fragment
         .append(
             `
-            <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="col-sm-12 col-md-6 col-lg-3 pb-3 pt-3">
                 <div id="room-${room.id}" class="card">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -35,7 +35,8 @@ const cardButton = room => {
         .css("width", "60%")
         .html('Zarezerwuj')
         .on("click", function() {
-            bucket.addRoom(room.id, room.name);
+            const quantity = 1;
+            bucket.addRoom(room.id, room.name, room.price, quantity);
         });
     return button;
 }
