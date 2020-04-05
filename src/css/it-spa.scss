@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i&display=swap');
+@import 'src/css/_defaults.scss';
 
 $grid-columns:      12;
 $grid-gutter-width: 20px;
@@ -69,7 +70,7 @@ input:valid {
     text-indent: -9999px;
     width: 100px;
     height: 82px;
-    background: url('img/logo.svg');
+    background: url('../img/logo.svg');
     background-size: 100px 82px;
 }
 
@@ -113,6 +114,12 @@ input:valid {
     }
 }
 
+input[type=number] {
+    width: 80px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+}
+
 .col-my {
     text-align: center;
     width: 150px;
@@ -121,13 +128,13 @@ input:valid {
     }
 }
 
-.modalCart {
-    right: 0px;
-    top: 100px;
+.cart {
     padding: 2%;
     text-align: center;
-    background-color: $bg-dark;
-    color: white;
+    width: 100%;
+}
+
+.cart--modal {
     z-index: 999;
     position: absolute;
     width: 0px;
@@ -145,4 +152,15 @@ input:valid {
 .visually {
     opacity: 100%;
     width: 500px;
+}
+
+.cart-item {
+    background-color: rgb(240, 240, 240);
+}
+
+.cart-btn-delete {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: -webkit-box;
 }

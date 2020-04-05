@@ -5,19 +5,15 @@ import {Bucket} from "../bucket";
 
 
 export const booking = () => {
-    const fragment = $(new DocumentFragment());
-    const container = $('<div class="container-fluid"></div>');
     let bucket = Bucket.getInstance();
     let page = () => {
         if (!bucket.isEmpty()) {
             let rooms = bucket.getRooms();
-            return container.append(cartContent(rooms));
+            return cartContent(rooms);
         } else {
-            return container.append(cartEmpty());
+            return cartEmpty();
         };
     }
 
-    fragment.append(page);
-
-    return Promise.resolve(fragment);
+    return Promise.resolve(page);
 };

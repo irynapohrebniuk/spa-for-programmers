@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 export var cartContentModal = (rooms) => {
     const fragment = $(new DocumentFragment());
-    const container = $('<div class="cart-items"></div>');
+    const container = $('<div id="cartContentModal" class="cart-content-model"></div>');
 
     const content = $('<h3 class="text-center m-3 row-my">Twój koszyk</h3>');
     container.append(content);

@@ -7,7 +7,7 @@ import { navLogin } from '../navigation/nav-item-login';
 
 export const nav = () => {
     const navbar = $(`
-    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <span class="navbar-brand logo">
     </span>
       <ul class="navbar-nav mr-auto"></ul>

@@ -6,19 +6,19 @@ export const navItemCart = (click) => {
     const anchor = $('<a class="btn btn-link text-light"></a>');
     const icon = $('<i class="fas fa-shopping-cart"></i>');
     const cartIcon = anchor.append(icon);
-    cartIcon.on('click', click)
-        .mouseover(function () {
-            $("#modalCart").removeClass("hidden");
-            $("#modalCart").addClass("visible");
-            setTimeout(function () {
-                $("#modalCart").addClass("visually");
-            }, 20);
-        })
-        .mouseout(function () {
-            $("#modalCart").addClass("hidden");
-            $("#modalCart").removeClass("visually");
-            $("#modalCart").removeClass("visible");
-        })
+    cartIcon.on('click', click);
+        // .mouseover(function () {
+        //     $('#booking').removeClass('hidden');
+        //     $('#booking').addClass('visible');
+        //     setTimeout(function () {
+        //         $('#booking').addClass('visually');
+        //     }, 20);
+        // })
+        // .mouseout(function () {
+        //     $('#booking').addClass('hidden');
+        //     $('#booking').removeClass('visually');
+        //     $('#booking').removeClass('visible');
+        // })
 
     navItemCart.append(anchor);
 

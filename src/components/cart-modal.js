@@ -14,7 +14,6 @@ export const cartModal = () => {
             return cartModal.append(cartEmpty());
         }
     }
-
     cartModal.append(content);
     return cartModal;
 }

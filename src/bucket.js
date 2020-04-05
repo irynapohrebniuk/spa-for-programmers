@@ -24,9 +24,29 @@ export var Bucket = (function() {
                     quantity: quantity
                 }
 
-                rooms.push(room);
+
+                if (rooms.length === 0) {
+                    rooms.push(room);
+                } else if (rooms.length !== 0 && rooms.find(room => room.id === id)) {
+                    rooms.map(room => {
+                        if (room.id === id) {
+                            room.quantity += quantity
+                        }
+                    })
+                } else {
+                    rooms.push(room);
+                }
+
 
                 localStorage.setItem('rooms', JSON.stringify(rooms))
+            },
+
+            updateRoom(id, price, quantity) {
+                rooms.map(room => {
+                    if (room.id === id) {
+                        room.quantity += quantity;
+                    }
+                })
             },
 
             deleteRoom(id) {

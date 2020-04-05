@@ -4,19 +4,15 @@ import {cartContent} from "./cart-content";
 import {cartEmpty} from "./cart-empty";
 
 export const cart = () => {
-    const modalCart = $('<div id="modalCart" class="modalCart hidden"></div>');
+
     let bucket = Bucket.getInstance();
-    let content = () => {
+    let model = () => {
         if (!bucket.isEmpty()) {
             let rooms = bucket.getRooms();
-            return modalCart.append(cartContent(rooms));
+            return cartContent(rooms);
         } else {
-            return modalCart.append(cartEmpty());
+            return cartEmpty();
         }
     }
-
-    modalCart.append(content);
-
-
-    return modalCart;
+    return model;
 }
