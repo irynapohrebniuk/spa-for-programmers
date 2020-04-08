@@ -1,11 +1,11 @@
-export var Bucket = (function() {
+export let Bucket = (function() {
 
-    var instance;
+    let instance;
 
     function init() {
 
-        var rooms = JSON.parse(localStorage.getItem('rooms')) || []
-        var treatments = JSON.parse(localStorage.getItem('treatments')) || []
+        let rooms = JSON.parse(localStorage.getItem('rooms')) || []
+        let treatments = JSON.parse(localStorage.getItem('treatments')) || []
 
         return {
             getRooms() {
@@ -16,42 +16,48 @@ export var Bucket = (function() {
                 return rooms.length === 0;
             },
 
-            addRoom(id, name, price, quantity) {
+            addRoom(id, name, price, quantity, totalPrice) {
                 const room = {
                     id: id,
                     name: name,
                     price: price,
-                    quantity: quantity
+                    quantity: quantity,
+                    totalPrice: totalPrice
                 }
-
+                console.log("room = ", room);
 
                 if (rooms.length === 0) {
+                    room.totalPrice = room.price * quantity;
                     rooms.push(room);
-                } else if (rooms.length !== 0 && rooms.find(room => room.id === id)) {
+                } else if (rooms.length !== 0 && rooms.find(room => room.id == id)) {
                     rooms.map(room => {
-                        if (room.id === id) {
-                            room.quantity += quantity
+                        if (room.id == id) {
+                            room.quantity += quantity;
+                            room.totalPrice = room.price * room.quantity
+                            console.log("total", room.totalPrice);
                         }
                     })
                 } else {
+                    room.totalPrice = room.price * quantity;
                     rooms.push(room);
                 }
-
-
                 localStorage.setItem('rooms', JSON.stringify(rooms))
             },
 
-            updateRoom(id, price, quantity) {
+            updateRoom(id, quantity, totalPrice) {
                 rooms.map(room => {
-                    if (room.id === id) {
-                        room.quantity += quantity;
+                    if (room.id == id) {
+                        room.quantity = quantity;
+                        room.totalPrice = room.quantity * room.price;
+                        localStorage.setItem('rooms', JSON.stringify(rooms));
                     }
                 })
             },
 
             deleteRoom(id) {
-                rooms = rooms.filter(room => room.id !== id);
-                localStorage.setItem('rooms', JSON.stringify(rooms))
+                const index =  rooms.indexOf(id);
+                rooms.splice(index,1);
+                localStorage.setItem('rooms', JSON.stringify(rooms));
             }
         };
     }

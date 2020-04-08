@@ -1,18 +1,19 @@
-import $ from 'jquery';
 import { cartContent } from '../components/cart-content';
-import { cartEmpty } from '../components/cart-empty';
+import { cartContentEmpty } from '../components/cart-empty';
 import {Bucket} from "../bucket";
 
 
 export const booking = () => {
     let bucket = Bucket.getInstance();
     let page = () => {
+        let content;
         if (!bucket.isEmpty()) {
             let rooms = bucket.getRooms();
-            return cartContent(rooms);
+            content = cartContent(rooms);
         } else {
-            return cartEmpty();
+            content = cartContentEmpty();
         };
+        return content;
     }
 
     return Promise.resolve(page);

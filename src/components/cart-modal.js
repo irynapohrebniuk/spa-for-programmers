@@ -1,6 +1,6 @@
 import $ from "jquery";
 import {Bucket} from "../bucket";
-import {cartEmpty} from "./cart-empty";
+import {cartContentEmpty} from "./cart-empty";
 import {cartContentModal} from "./cart-content-modal";
 
 export const cartModal = () => {
@@ -11,7 +11,7 @@ export const cartModal = () => {
             let rooms = bucket.getRooms();
             return cartModal.append(cartContentModal(rooms));
         } else {
-            return cartModal.append(cartEmpty());
+            return cartModal.append(cartContentEmpty());
         }
     }
     cartModal.append(content);

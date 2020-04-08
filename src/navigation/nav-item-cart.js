@@ -3,7 +3,7 @@ import {cart} from "../components/cart";
 
 export const navItemCart = (click) => {
     const navItemCart = $('<span id="cart"></span>');
-    const anchor = $('<a class="btn btn-link text-light"></a>');
+    const anchor = $('<a class="btn btn-link text-dark"></a>');
     const icon = $('<i class="fas fa-shopping-cart"></i>');
     const cartIcon = anchor.append(icon);
     cartIcon.on('click', click);

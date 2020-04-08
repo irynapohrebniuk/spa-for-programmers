@@ -1,87 +1,105 @@
 import $ from 'jquery';
-import {buttonDelete} from './button-delete';
 import {updateRoom} from "./cart-modal";
+import {Bucket} from "../bucket";
+import {cartContentEmpty} from "./cart-empty";
 
-export var cartContent = (rooms) => {
-    const fragment = $(new DocumentFragment());
-    const item = $(`
-    <div class="container bg-light p-3">
+export const cartContent = (rooms) => {
+    // const fragment = $(new DocumentFragment());
+    const fragment = $('<div class="container-fluid"></div>');
+    const bucket = Bucket.getInstance();
+
+    for (let room of rooms) {
+        const cartItem = item(room);
+        fragment.append(cartItem);
+    }
+
+    function item(room) {
+        const fragment = $(`
+    <div id="cart-item-${room.id}" class="container bg-light p-3 m-2">
     <div class="row">
         <div class="col-md-4 col-sm-10 text-center">
             <a><img class="rounded mx-auto img-fluid p-1 " src="https://placeimg.com/640/240/14" alt=" " title=" "></a>
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="container">
-                <h4>Room</h4>
-                <h6>Price: 300 zł</h6>
+                <h4>${room.name}</h4>
+                <h6>Price: <span id="price-${room.id}" class="m-2 p-2">${room.price} </span><span>PLN</span></h6>
                 <div>
                     <div class="row">
                         <div class="col">Check-in:</div>
-                        <div class="col">01.01.2020</div>
+                        <div id="check-in-${room.id}" class="col">01.01.2020</div>
                     </div>
                     <div class="row">
                         <div class="col">Check-out:</div>
-                        <div class="col">10.01.2020</div> 
+                        <div id="check-out-${room.id}" class="col">10.01.2020</div> 
                     </div>
                 </div>
                 
                 <hr>
                     
                 <div class="row align-items-center pb-3">
-                    <div class="col-4">
-                        <select class="custom-select">
-                            <option value="1 ">1</option>
-                            <option value="2 ">2</option>
-                            <option value="3 ">3</option>
-                            <option value="4 ">4</option>
-                            <option value="5 ">5</option>
-                            <option value="6 ">6</option>
-                            <option value="7 ">7</option>
-                            <option value="8 ">8</option>
-                            <option value="9 ">9</option>
-                            <option value="10 ">10</option>
-                        </select>
-                      
+                    <div class="col-4 quantity">
+                    
                     </div>
-                    <div class="col-8 align-middle text-right"><span>170</span><span>&nbsp;pln</span></div>
+                    <div id="total-price-${room.id}" class="col-8 align-middle text-right"><span><h5>${room.totalPrice}</span><span>&nbsp;PLN</h5></span></div>
                 </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-2 text-right">
-                <button type="button" class="btn btn-lg" aria-label="Delete">&#215;</button>
+        <div id="btn-delete" class="col-md-2 col-sm-2 text-right">   
         </div>
-        
         </div>
     </div>`);
 
-    function createCartItem(room) {
-        const tr = $(`<div id="${room.id}" class="row cart-item"></div>`);
-        const td_name = $(`<div class="col-my">${room.name}</div>`);
-        const td_price = $(`<div  class="col-my">${room.price}</div>`);
-        const td_quantity = $('<div  class="col-my">');
-        const input = $('<input type="number" placeholder="" class="quantity">');
-        td_quantity.append(input);
-        const td_total_price = $(`<div class="col-my total_price">${room.price}</div>`);
-        const td_delete = $('<div class="col-my">');
-        td_delete.append(buttonDelete(room.id));
+        const anchor = $(`<a id="btn-del-${room.id}" class="btn btn-link text-dark">&times;</a>`);
+        anchor.on('click', (event) => {
+            console.log(room.id);
+            let row = $('#cart-item-' + room.id);
+            row.remove();
+            const id = row.id;
+            bucket.deleteRoom(id);
+            const s = sum();
+            console.log(s);
+            $("#total").html(s);
+        })
+        fragment.find('#btn-delete').append(anchor);
 
-        tr.append(td_name, td_price, td_quantity, td_total_price, td_delete);
-      //  td_quantity.change((event) => updateItemTotal(room.id));
-        return tr;
+        const input = $(`<input id="quantity-${room.id}" type="number" placeholder="${room.quantity}" value="${room.quantity}" class="form-control" aria-label="Quantity" pattern="[1-9]">`);
+        input.change(function () {
+            const id = this.id.substring(9, this.id.length + 1);
+            const quantity = $('#quantity-' + id).val();
+            const price = $('#price-' + id).text();
+            const totalPrice = Number(quantity) * Number(price);
+            fragment.find("#total-price-" + id).text(totalPrice);
+            bucket.updateRoom(id, quantity, totalPrice);
+            $("#total").text(sum());
+
+        });
+        fragment.find('.quantity').append(input);
+
+        return fragment;
     }
 
-    fragment.append(item);
-    // const total = $(`<div class="row"><div class="col-sm">Razem do zaplaty</div><div id="total" class="col-sm"></div></div>`);
-    // container.append(total);
-    return fragment;
-}
+    const total = $(
+        `<div class="container bg-light p-3 m-2 text-right">
+        <h4>
+        <span class="m-2">TOTAL:</span>
+        <span id="total" class="m-2">${sum()}</span>
+        <span class="m-2">PLN</span>
+        </h4>
+        </div>`);
 
-// function updateItemTotal(id) {
-//
-//     const quantity = $(`#${id}`).find('input').val();
-//     const price = $(`#${id}`).find('.price').text();
-//     updateRoom(id,quantity,price);
-//     const totalPrice = Number(quantity) * Number(price);
-//     $(`#${id}`).find('.total_price').text(totalPrice.toString());
-//
-// }
+
+    function sum() {
+        let rooms = bucket.getRooms();
+        let s = 0;
+        for (let room of rooms) {
+            s += Number(room.totalPrice);
+        }
+        return s;
+    }
+
+    fragment.append(total);
+
+    return fragment;
+
+}

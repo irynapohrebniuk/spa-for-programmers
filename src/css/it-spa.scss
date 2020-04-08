@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i&display=swap');
-@import 'src/css/_defaults.scss';
 
 $grid-columns:      12;
 $grid-gutter-width: 20px;
@@ -32,8 +31,11 @@ $bg-dark: #343a40;
 
 body {
     margin: 0;
-    background-color: lightgrey;
     font-family: 'Roboto', sans-serif;
+    color: black;
+}
+a {
+    color: #6c757d;
 }
 
 main {
@@ -47,7 +49,7 @@ main {
     bottom: 0;
     width: 100%;
     background-color: #343a40;
-    color: white;
+    color: black;
     text-align: right;
     height: 50px;
 }
@@ -56,12 +58,16 @@ main {
     font-size: 24px;
 }
 
-input:invalid {
+input[text]:invalid {
     border: 1px solid red;
 }
 
-input:valid {
+input[text]:valid {
     border: 1px solid green;
+}
+input[type=number] {
+    border: 1px solid lightgray;
+
 }
 
 .logo {

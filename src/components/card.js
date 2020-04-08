@@ -36,7 +36,7 @@ const cardButton = room => {
         .html('Zarezerwuj')
         .on("click", function() {
             const quantity = 1;
-            bucket.addRoom(room.id, room.name, room.price, quantity);
+            bucket.addRoom(room.id, room.name, room.price, quantity, room.totalPrice);
         });
     return button;
 }

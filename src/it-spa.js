@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/it-spa.scss';
 import $ from 'jquery';
-
+import '../src/css/it-spa.scss'
 import { Router } from './router/router';
 import { nav } from "./navigation/nav";
 import {cartModal} from "./components/cart-modal";

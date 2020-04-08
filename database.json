@@ -69,6 +69,13 @@
             "beds": 2,
             "guests": 4,
             "price": 340
+        },
+        {
+            "id": 10903,
+            "name": "Pokój czwórkowy",
+            "beds": 2,
+            "guests": 4,
+            "price": 340
         }
     ],
     "treatments": [{
