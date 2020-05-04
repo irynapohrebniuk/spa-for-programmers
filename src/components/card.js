@@ -36,6 +36,10 @@ const cardButton = room => {
         .html('Zarezerwuj')
         .on("click", function() {
             const quantity = 1;
+            const checkIn = $('.check-in').val();
+            console.log('checkIn: ', checkIn);
+            const checkOut = $('.check-out').val();
+            console.log('checkout: ', checkOut);
             bucket.addRoom(room.id, room.name, room.price, quantity, room.totalPrice);
         });
     return button;

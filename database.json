@@ -5,77 +5,143 @@
             "name": "Pokój unarny",
             "beds": 1,
             "guests": 1,
-            "price": 170
+            "price": 170,
+            "isnotFree": [
+                {"checkIn": "12.07.2020", "checkOut": "18.07.2020"},
+                {"checkIn": "24.07.2020", "checkOut": "26.07.2020"},
+                {"checkIn": "05.10.2020", "checkOut": "08.10.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 2,
             "name": "Pokój binarny",
             "beds": 1,
             "guests": 2,
-            "price": 240
+            "price": 240,
+            "isnotFree": [
+                {"checkIn": "2.08.2020", "checkOut": "18.08.2020"},
+                {"checkIn": "24.11.2020", "checkOut": "26.11.2020"},
+                {"checkIn": "05.10.2020", "checkOut": "08.10.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 3,
             "name": "Pokój trójkowy",
             "beds": 2,
             "guests": 3,
-            "price": 290
+            "price": 290,
+            "isnotFree": [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 4,
             "name": "Pokój czwórkowy",
             "beds": 2,
             "guests": 4,
-            "price": 340
+            "price": 340,
+            [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 5,
             "name": "Pokój czwórkowy",
             "beds": 2,
             "guests": 4,
-            "price": 340
+            "price": 340,
+            [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 6,
             "name": "Pokój czwórkowy",
             "beds": 2,
             "guests": 4,
-            "price": 340
+            "price": 340,
+            [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 7,
             "name": "Pokój czwórkowy",
             "beds": 2,
             "guests": 4,
-            "price": 340
+            "price": 340,
+            [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 8,
             "name": "Pokój czwórkowy",
             "beds": 2,
             "guests": 4,
-            "price": 340
+            "price": 340,
+            [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 9,
             "name": "Pokój czwórkowy",
             "beds": 2,
             "guests": 4,
-            "price": 340
+            "price": 340,
+            [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 10,
             "name": "Pokój czwórkowy",
             "beds": 2,
             "guests": 4,
-            "price": 340
+            "price": 340,
+            [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 10903,
             "name": "Pokój czwórkowy",
             "beds": 2,
             "guests": 4,
-            "price": 340
+            "price": 340,
+            [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         }
     ],
     "treatments": [{

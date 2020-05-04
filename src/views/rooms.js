@@ -16,7 +16,9 @@ export const rooms = () => {
             </div>
           </div>
         </div>`);
+
     fragment.find('#leftLayout').append(datePicker);
+
     const typeOfService = "rooms";
 
     const promise = getService.getServices(typeOfService)

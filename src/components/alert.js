@@ -1,6 +1,6 @@
 import $ from "jquery";
 import { button } from "../navigation/button";
-import { login } from "../views";
+import { login } from "../index";
 import {loginForm} from "./login-form";
 
 

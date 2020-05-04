@@ -1,7 +1,7 @@
 import $ from "jquery";
 import {Bucket} from "../bucket";
 import {cartContent} from "./cart-content";
-import {cartEmpty} from "./cart-empty";
+import {cartContentEmpty} from "./cart-empty";
 
 export const cart = () => {
 
@@ -11,7 +11,7 @@ export const cart = () => {
             let rooms = bucket.getRooms();
             return cartContent(rooms);
         } else {
-            return cartEmpty();
+            return cartContentEmpty();
         }
     }
     return model;

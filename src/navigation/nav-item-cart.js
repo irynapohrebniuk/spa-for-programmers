@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import {cart} from "../components/cart";
+// import {cart} from "../components/cart";
 
 export const navItemCart = (click) => {
     const navItemCart = $('<span id="cart"></span>');

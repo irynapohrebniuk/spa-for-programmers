@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i&display=swap');
 
 $grid-columns:      12;
-$grid-gutter-width: 20px;
 
 $grid-breakpoints: (
     // Extra small screen / phone
@@ -113,12 +112,12 @@ input[type=number] {
 .opacity-100 {
     opacity: 1; }
 
-.row-my {
-    width: 600px;
-    @media screen and (max-width: $break-small) {
-        width: 300px;
-    }
-}
+//.row-my {
+//    width: 600px;
+//    @media screen and (max-width: $break-small) {
+//        width: 300px;
+//    }
+//}
 
 input[type=number] {
     width: 80px;
@@ -126,13 +125,27 @@ input[type=number] {
     border: 2px solid #ccc;
 }
 
-.col-my {
-    text-align: center;
-    width: 150px;
-    @media screen and (max-width: $break-small) {
-        width: 100px;
-    }
+.container-fluid {
+    padding-right:0;
+    padding-left:0;
+    margin-right:auto;
+    margin-left:auto
 }
+
+
+section {
+    width: 90%;
+    text-align: center;
+    padding: 30px 0px ;
+}
+
+//.col-my {
+//    text-align: center;
+//    width: 150px;
+//    @media screen and (max-width: $break-small) {
+//        width: 100px;
+//    }
+//}
 
 .cart {
     padding: 2%;
@@ -169,4 +182,15 @@ input[type=number] {
     top: 0px;
     right: 0px;
     display: -webkit-box;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
