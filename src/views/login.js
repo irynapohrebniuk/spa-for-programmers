@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { loginForm } from "../components/login-form";
 import { routeChange } from "../router/route-change";
-import { button } from "../navigation/button";
+import { button } from "../components/navigation/button";
 
 export const login = () => {
     const fragment = $(new DocumentFragment());

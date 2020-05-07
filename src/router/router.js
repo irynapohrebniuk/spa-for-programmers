@@ -16,7 +16,6 @@ export class Router {
 
         this.body.on(routeChange, (event, detail) => {
             this.navigate(detail.path);
-            console.log("detail.path:", detail.path)
         });
     }
 

@@ -45,7 +45,7 @@
             "beds": 2,
             "guests": 4,
             "price": 340,
-            [
+            "isnotFree": [
                 {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
                 {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
                 {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
@@ -58,7 +58,7 @@
             "beds": 2,
             "guests": 4,
             "price": 340,
-            [
+            "isnotFree": [
                 {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
                 {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
                 {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
@@ -71,7 +71,7 @@
             "beds": 2,
             "guests": 4,
             "price": 340,
-            [
+            "isnotFree": [
                 {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
                 {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
                 {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
@@ -84,7 +84,7 @@
             "beds": 2,
             "guests": 4,
             "price": 340,
-            [
+            "isnotFree": [
                 {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
                 {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
                 {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
@@ -97,7 +97,7 @@
             "beds": 2,
             "guests": 4,
             "price": 340,
-            [
+            "isnotFree": [
                 {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
                 {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
                 {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
@@ -110,7 +110,7 @@
             "beds": 2,
             "guests": 4,
             "price": 340,
-            [
+            "isnotFree": [
                 {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
                 {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
                 {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
@@ -123,7 +123,7 @@
             "beds": 2,
             "guests": 4,
             "price": 340,
-            [
+            "isnotFree": [
                 {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
                 {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
                 {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
@@ -136,7 +136,7 @@
             "beds": 2,
             "guests": 4,
             "price": 340,
-            [
+            "isnotFree": [
                 {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
                 {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
                 {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
@@ -149,49 +149,91 @@
             "name": "Masaż rozgrzanym monitorem",
             "area": "back",
             "time": 30,
-            "price": 80
+            "price": 80,
+            "isnotFree": [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 2,
             "name": "Biczowanie kablem od myszy",
             "area": "back",
             "time": 20,
-            "price": 70
+            "price": 70,
+            "isnotFree": [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 3,
             "name": "Peeling odłamkami płyty CD",
             "area": "face",
             "time": 15,
-            "price": 50
+            "price": 50,
+            "isnotFree": [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 4,
             "name": "Pedicure woskiem z USB",
             "area": "legs",
             "time": 25,
-            "price": 100
+            "price": 100,
+            "isnotFree": [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 5,
             "name": "Manicure analogowo-cyfrowy",
             "area": "hands",
             "time": 45,
-            "price": 150
+            "price": 150,
+            "isnotFree": [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 6,
             "name": "Kąpiel w gorącej kawie",
             "area": "body",
             "time": 60,
-            "price": 200
+            "price": 200,
+            "isnotFree": [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         },
         {
             "id": 7,
             "name": "Depilacja dyskiem twardym",
             "area": "body",
             "time": 45,
-            "price": 120
+            "price": 120,
+            "isnotFree": [
+                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
+                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
+                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
+                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+            ]
         }
     ],
     "prices": [{

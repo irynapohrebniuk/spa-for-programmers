@@ -1,6 +1,6 @@
 import $ from "jquery";
 import { routeChange } from "../router/route-change";
-import { navItemAccount } from "../navigation/nav-item-account";
+import { navItemAccount } from "./navigation/nav-item-account";
 import { alert } from "../components/alert";
 
 export const loginForm = (title, buttonTitle) => {

@@ -5,6 +5,7 @@ import {treatments} from "../views/treatments";
 import {contact} from "../views/contact";
 import {booking} from "../views/booking";
 import {login} from "../views/login";
+import {filter} from "../views/filter"
 
 export const routes = [
     { name: 'Home', path: '/', data: {group: "main-menu"}, component: home },
@@ -13,5 +14,6 @@ export const routes = [
     { name: 'Contact', path: '/contact', data: {group: "main-menu"}, component: contact },
     { name: 'Booking', path: '/booking', data: {group: "booking"}, component: booking },
     { name: 'Auth', path: '/login', data: {group: "login"}, component: login },
-    { name: 'Sign up', path: '/signup', data: {group: "signup"}, component: signup }
+    { name: 'Sign up', path: '/signup', data: {group: "signup"}, component: signup },
+    { name: 'Filter', path: '/filter', data: {group: "filter"}, component: filter }
 ];

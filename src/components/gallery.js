@@ -1,78 +1,27 @@
+import { routeChange } from "../router/route-change";
+
+var images = require.context('../img/gallery', false);
+
 export const gallery = () => {
-    const gallery = `<div class="row">
-  <div id="gallery" class="col-md-12">
 
-    <div id="mdb-lightbox-ui"></div>
+  const gallery = $(`<div id="gallery"></div>`)
 
-    <div class="mdb-lightbox no-margin">
+  const row = $('<div class="row no-gutters">')
 
-      <figure class="col-md-4">
-        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg" data-size="1600x1067">
-          <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(117).jpg"
-            class="img-fluid">
-        </a>
-      </figure>
+  images.keys().map((key) => {
+    const image = $('<img class="img-fluid">')
+    image.attr('src', images(key).default)
+    const column = $('<div data-aos="flip-left" class="col-sm-6 col-md-4 col-lg-3 col-xs-12">')
+    // image
+    //   .on('click', () => {
+    //     image.trigger(routeChange,{ path: '/booking' })
+    //     })
+    column.append(image)
+    row.append(column)
+  })
 
-      <figure class="col-md-4">
-        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg" data-size="1600x1067">
-          <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(98).jpg"
-            class="img-fluid" />
-        </a>
-      </figure>
+  gallery.append(row)
 
-      <figure class="col-md-4">
-        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg" data-size="1600x1067">
-          <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(131).jpg"
-            class="img-fluid" />
-        </a>
-      </figure>
 
-      <figure class="col-md-4">
-        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg" data-size="1600x1067">
-          <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(123).jpg"
-            class="img-fluid" />
-        </a>
-      </figure>
-
-      <figure class="col-md-4">
-        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg" data-size="1600x1067">
-          <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(118).jpg"
-            class="img-fluid" />
-        </a>
-      </figure>
-
-      <figure class="col-md-4">
-        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(128).jpg" data-size="1600x1067">
-          <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(128).jpg"
-            class="img-fluid" />
-        </a>
-      </figure>
-
-      <figure class="col-md-4">
-        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg" data-size="1600x1067">
-          <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(132).jpg"
-            class="img-fluid" />
-        </a>
-      </figure>
-
-      <figure class="col-md-4">
-        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(115).jpg" data-size="1600x1067">
-          <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(115).jpg"
-            class="img-fluid" />
-        </a>
-      </figure>
-
-      <figure class="col-md-4">
-        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(133).jpg" data-size="1600x1067">
-          <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(133).jpg"
-            class="img-fluid" />
-        </a>
-      </figure>
-
-    </div>
-
-  </div>
-</div>`;
-
-    return gallery;
+  return gallery
 }
