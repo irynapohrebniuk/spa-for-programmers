@@ -13,16 +13,14 @@ export class Router {
 
     mount(outlet) {
         this.outlet = outlet;
-
-        this.body.on(routeChange, (event, detail) => {
-            this.navigate(detail.path);
+        this.body.on(routeChange, (event, data) => {
+            console.log("mount(): event, data :", event, data);
+            this.navigate(data);
         });
     }
 
-
-
     init() {
-        this.navigate(location.pathname);
+        this.navigate({ path: location.pathname});
     }
 
     get(path) {
@@ -33,13 +31,11 @@ export class Router {
         return this.get(path) !== undefined;
     }
 
-    navigate(path, data = {}) {
-        // sciezka istnieje, mozna nawigowac
-        if (this.has(path)) {
-            // { path: '/booking', data: {}, component: booking }
-            const { component } = this.get(path);
-
-            component()
+    navigate(data) {
+        console.log("navigate(): data :", data);
+        if (this.has(data.path)) {
+            const { component } = this.get(data.path);
+            component(data)
                 .then(html => {
                     this.outlet.empty().append(html);
                 })
@@ -48,6 +44,6 @@ export class Router {
             this.outlet.empty().append(html);
         }
 
-        history.pushState(data, '', path);
+        history.pushState(data.path, '', data.path);
     }
 }

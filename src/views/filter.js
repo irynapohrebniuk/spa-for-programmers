@@ -1,29 +1,21 @@
 import $ from 'jquery';
-import { filterService } from '../common/filter-service';
-import { card } from '../components/card';
+import { filterServices } from '../common/filter-service';
+import { card } from '../components/card'
 
-export const filter = () => {
+export const filter = (data) => {
+    console.log("filter page: checkIn = ", data)
+    const typeOfService = "rooms"
 
-    const fragment = $(new DocumentFragment());
-    fragment.append(`
-        <div class="container-fluid">
-        <div class="row">
-        </div>
-        </div>`);
+    const fragment = $('<div class="row w-100">')
 
-    
-    const typeOfService = "rooms";
-
-    const promise = filterService.filterService(typeOfService)
+    const promise = filterServices.filterService(typeOfService, data.checkIn, data.checkOut)
         .then(rooms => {
-            for (let i = 0; i < rooms.length; i++) {
-                let room = rooms[i];
-                fragment.find('.row').append(card(room));
-            }
-            return fragment;
-        });
+            rooms.map(room => {
+                fragment.append(card(room))
+            })
+            return fragment
+        })
 
     return Promise.resolve(promise);
-
 
 }

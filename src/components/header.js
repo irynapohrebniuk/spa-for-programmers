@@ -1,27 +1,19 @@
-import { datePicker } from '../components/date-picker'
-import { nav } from './navigation/nav'
 import { navbar } from './navigation/navbar'
 import { navbarMobile } from './navigation/navbar-mobile'
+import { gridTwoColumns } from '../components/grid'
+import { datePicker } from './date-picker'
 
 const header = () => {
-    const header = $(new DocumentFragment())
-    const grid = $(`
-        <div id="header" class="row align-items-center">
-            <div id="find-text" class="col-lg-8 col-md-6 col-sm-12 col-xs-12 mt-2"></div>
-            <div id="find-room" class="col-lg-4 col-md-6 col-sm-12 col-xs-12"></div>
-        </div>
-    `)
-
-    const text = '<h4 class="text-center">Find avalaible room for you and much more...</h4>'
+    const header = $('<header id="header">')
 
     header.append(navbar)
     header.append(navbarMobile)
+
+    const text = '<h4 class="text-center">Find avalaible room for you and much more...</h4>'
+    header.append(gridTwoColumns('find-text', 'find-room'))
+    header.find('#find-text').append(text)
+    header.find('#find-room').append(datePicker)
     
-    header.append(grid)
-
-    grid.find('#find-text').append(text)
-    grid.find('#find-room').append(datePicker)
-
     return header
 }
 export { header }

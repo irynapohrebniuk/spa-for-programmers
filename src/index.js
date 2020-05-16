@@ -13,11 +13,10 @@ import 'aos/dist/aos';
 import './css/it-spa.scss';
 import { header } from './components/header'
 import { Router } from "./router/router";
-import { datePicker } from './components/date-picker';
-
 
 const main = $('<main class="container-fluid">');
 $('body').append(main);
+
 
 const router = new Router();
 router.mount(main);
@@ -32,5 +31,6 @@ AOS.init({
 
 
 main.before(header)
+
 // main.after(footer)
 

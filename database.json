@@ -1,16 +1,55 @@
 {
-
-    "rooms": [{
+    "hotel": [
+        {
+            "description": "Hotel SPA is an elegant 19th-century property, providing good-value bed and breakfast accommodation and friendly service. Victoria Coach Station is a 5-minute walk away and Buckingham Palace is nearby. Free Wi-Fi internet access is available and there is a 24-hour reception and a luggage store facility. Each comfortable room has a TV, telephone, tea/coffee facilities and a private bathroom with a walk-in shower. An inclusive continental breakfast is provided from 7:30 every morning."
+        },
+        {
+            "contact": {
+                "street": "29 Saint Georges Drive",
+                "city": "London",
+                "country": "United Kingdom",
+                "zip-code": "SW1V 4DG"
+            }
+        },
+        {
+            "facilities": [
+                ["Non-smoking rooms", ""],
+                ["WiFi available in all areas"],
+                ["Free WiFi",""],
+                ["Family rooms",""],
+                ["24-hour front desk",""],
+                ["Breakfast", ""]
+            ]
+        }
+    ],
+    "rooms": [
+        {
             "id": 1,
             "name": "Pokój unarny",
             "beds": 1,
             "guests": 1,
             "price": 170,
+            "facilities": [
+                "Linen","Dressing Room", "Wardrobe or closet", "Tea/Coffee Maker", "Air conditioning", "Safety Deposit Box", "Soundproofing", "Ironing Facilities", "Iron", "Heating", "Carpeted",  "Electric kettle", "Desk", "Seating Area", "TV", "Telephone", "Satellite Channels", "Flat-screen TV",  "Socket near the bed", "Clothes rack", "Wake Up Service/Alarm Clock", "Wake-up service", "Executive Lounge Access"
+            ],
+            "view": "City view",
             "isnotFree": [
-                {"checkIn": "12.07.2020", "checkOut": "18.07.2020"},
-                {"checkIn": "24.07.2020", "checkOut": "26.07.2020"},
-                {"checkIn": "05.10.2020", "checkOut": "08.10.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "07.12.2020",
+                    "checkOut": "07.18.2020"
+                },
+                {
+                    "checkIn": "07.24.2020",
+                    "checkOut": "07.31.2020"
+                },
+                {
+                    "checkIn": "10.05.2020",
+                    "checkOut": "10.08.2020"
+                },
+                {
+                    "checkIn": "05.12.2021",
+                    "checkOut": "05.18.2021"
+                }
             ]
         },
         {
@@ -19,11 +58,19 @@
             "beds": 1,
             "guests": 2,
             "price": 240,
+            "facilities": [
+                "Linen","Dressing Room", "Wardrobe or closet", "Child safety socket covers", "Air conditioning", "Safety Deposit Box", "Soundproofing", "Ironing Facilities", "Iron", "Heating", "Carpeted",  "Electric kettle", "Desk", "Seating Area", "TV", "Telephone", "Flat-screen TV",  "Socket near the bed", "Clothes rack", "Wake Up Service/Alarm Clock"
+            ],
+            "view": "City view",
             "isnotFree": [
-                {"checkIn": "2.08.2020", "checkOut": "18.08.2020"},
-                {"checkIn": "24.11.2020", "checkOut": "26.11.2020"},
-                {"checkIn": "05.10.2020", "checkOut": "08.10.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "08.01.2020",
+                    "checkOut": "08.18.2020"
+                },
+                {
+                    "checkIn": "07.07.2020",
+                    "checkOut": "07.15.2020"
+                }
             ]
         },
         {
@@ -32,11 +79,15 @@
             "beds": 2,
             "guests": 3,
             "price": 290,
+            "facilities": [
+                "Linen","Dressing Room", "Wardrobe or closet", "Child safety socket covers", "Air conditioning", "Safety Deposit Box", "Soundproofing", "Ironing Facilities", "Iron", "Heating", "Carpeted",  "Electric kettle", "Desk", "Seating Area", "TV", "Telephone", "Flat-screen TV",  "Socket near the bed", "Clothes rack", "Wake Up Service/Alarm Clock"
+            ],
+            "view": "City view",
             "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "07.03.2020",
+                    "checkOut": "07.16.2020"
+                }
             ]
         },
         {
@@ -45,116 +96,42 @@
             "beds": 2,
             "guests": 4,
             "price": 340,
+            "facilities": [
+                "Linen","Dressing Room", "Wardrobe or closet", "Child safety socket covers", "Air conditioning", "Safety Deposit Box", "Soundproofing", "Ironing Facilities", "Iron", "Heating", "Carpeted",  "Electric kettle", "Desk", "Seating Area", "TV", "Telephone", "Flat-screen TV",  "Socket near the bed", "Clothes rack", "Wake Up Service/Alarm Clock"
+            ],
+            "view": "City view",
             "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
-            ]
-        },
-        {
-            "id": 5,
-            "name": "Pokój czwórkowy",
-            "beds": 2,
-            "guests": 4,
-            "price": 340,
-            "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
-            ]
-        },
-        {
-            "id": 6,
-            "name": "Pokój czwórkowy",
-            "beds": 2,
-            "guests": 4,
-            "price": 340,
-            "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
-            ]
-        },
-        {
-            "id": 7,
-            "name": "Pokój czwórkowy",
-            "beds": 2,
-            "guests": 4,
-            "price": 340,
-            "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
-            ]
-        },
-        {
-            "id": 8,
-            "name": "Pokój czwórkowy",
-            "beds": 2,
-            "guests": 4,
-            "price": 340,
-            "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
-            ]
-        },
-        {
-            "id": 9,
-            "name": "Pokój czwórkowy",
-            "beds": 2,
-            "guests": 4,
-            "price": 340,
-            "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
-            ]
-        },
-        {
-            "id": 10,
-            "name": "Pokój czwórkowy",
-            "beds": 2,
-            "guests": 4,
-            "price": 340,
-            "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
-            ]
-        },
-        {
-            "id": 10903,
-            "name": "Pokój czwórkowy",
-            "beds": 2,
-            "guests": 4,
-            "price": 340,
-            "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "07.01.2020",
+                    "checkOut": "07.27.2020"
+                }
             ]
         }
     ],
-    "treatments": [{
+    "treatments": [
+        {
             "id": 1,
             "name": "Masaż rozgrzanym monitorem",
             "area": "back",
             "time": 30,
             "price": 80,
             "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "01.07.2020",
+                    "checkOut": "30.07.2020"
+                },
+                {
+                    "checkIn": "01.08.2020",
+                    "checkOut": "26.08.2020"
+                },
+                {
+                    "checkIn": "05.09.2020",
+                    "checkOut": "09.09.2020"
+                },
+                {
+                    "checkIn": "12.05.2021",
+                    "checkOut": "18.05.2021"
+                }
             ]
         },
         {
@@ -164,10 +141,22 @@
             "time": 20,
             "price": 70,
             "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "01.07.2020",
+                    "checkOut": "30.07.2020"
+                },
+                {
+                    "checkIn": "01.08.2020",
+                    "checkOut": "26.08.2020"
+                },
+                {
+                    "checkIn": "05.09.2020",
+                    "checkOut": "09.09.2020"
+                },
+                {
+                    "checkIn": "12.05.2021",
+                    "checkOut": "18.05.2021"
+                }
             ]
         },
         {
@@ -177,10 +166,22 @@
             "time": 15,
             "price": 50,
             "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "01.07.2020",
+                    "checkOut": "30.07.2020"
+                },
+                {
+                    "checkIn": "01.08.2020",
+                    "checkOut": "26.08.2020"
+                },
+                {
+                    "checkIn": "05.09.2020",
+                    "checkOut": "09.09.2020"
+                },
+                {
+                    "checkIn": "12.05.2021",
+                    "checkOut": "18.05.2021"
+                }
             ]
         },
         {
@@ -190,10 +191,22 @@
             "time": 25,
             "price": 100,
             "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "01.07.2020",
+                    "checkOut": "30.07.2020"
+                },
+                {
+                    "checkIn": "01.08.2020",
+                    "checkOut": "26.08.2020"
+                },
+                {
+                    "checkIn": "05.09.2020",
+                    "checkOut": "09.09.2020"
+                },
+                {
+                    "checkIn": "12.05.2021",
+                    "checkOut": "18.05.2021"
+                }
             ]
         },
         {
@@ -203,10 +216,22 @@
             "time": 45,
             "price": 150,
             "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "01.07.2020",
+                    "checkOut": "30.07.2020"
+                },
+                {
+                    "checkIn": "01.08.2020",
+                    "checkOut": "26.08.2020"
+                },
+                {
+                    "checkIn": "05.09.2020",
+                    "checkOut": "09.09.2020"
+                },
+                {
+                    "checkIn": "12.05.2021",
+                    "checkOut": "18.05.2021"
+                }
             ]
         },
         {
@@ -216,10 +241,22 @@
             "time": 60,
             "price": 200,
             "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "01.07.2020",
+                    "checkOut": "30.07.2020"
+                },
+                {
+                    "checkIn": "01.08.2020",
+                    "checkOut": "26.08.2020"
+                },
+                {
+                    "checkIn": "05.09.2020",
+                    "checkOut": "09.09.2020"
+                },
+                {
+                    "checkIn": "12.05.2021",
+                    "checkOut": "18.05.2021"
+                }
             ]
         },
         {
@@ -229,14 +266,27 @@
             "time": 45,
             "price": 120,
             "isnotFree": [
-                {"checkIn": "01.07.2020", "checkOut": "30.07.2020"},
-                {"checkIn": "01.08.2020", "checkOut": "26.08.2020"},
-                {"checkIn": "05.09.2020", "checkOut": "09.09.2020"},
-                {"checkIn": "12.05.2021", "checkOut": "18.05.2021"}
+                {
+                    "checkIn": "01.07.2020",
+                    "checkOut": "30.07.2020"
+                },
+                {
+                    "checkIn": "01.08.2020",
+                    "checkOut": "26.08.2020"
+                },
+                {
+                    "checkIn": "05.09.2020",
+                    "checkOut": "09.09.2020"
+                },
+                {
+                    "checkIn": "12.05.2021",
+                    "checkOut": "18.05.2021"
+                }
             ]
         }
     ],
-    "prices": [{
+    "prices": [
+        {
             "id": 1,
             "name": "Masaż rozgrzanym monitorem",
             "area": "back",

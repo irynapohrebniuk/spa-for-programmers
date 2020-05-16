@@ -1,4 +1,4 @@
-import { navItems } from './nav-items'
+import { navItems, navItemMobileCart, navItemMobileLogin } from './nav-items'
 const navbarMobile = () => {
     const navbarMobile = $(`
         <div class="pos-f-t mobile">
@@ -16,6 +16,8 @@ const navbarMobile = () => {
         </div>
     `)
     navbarMobile.find('#nav-mobile-links').append(navItems)
+    navbarMobile.find('#nav-mobile-links').append(navItemMobileCart)
+    navbarMobile.find('#nav-mobile-links').append(navItemMobileLogin)
 
     return navbarMobile
 }

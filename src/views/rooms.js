@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import { getService } from '../common/get-service';
 import { card } from '../components/card';
-import {datePicker} from "../components/date-picker";
 
 export const rooms = () => {
 
@@ -16,8 +15,6 @@ export const rooms = () => {
             </div>
           </div>
         </div>`);
-
-    fragment.find('#leftLayout').append(datePicker);
 
     const typeOfService = "rooms";
 

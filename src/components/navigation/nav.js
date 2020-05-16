@@ -17,7 +17,6 @@ export const nav = () => {
       return navItem(name, () => fragment.trigger(routeChange, { path: path }))
   })
 
-//  fragment.find('#nav-links').append(navItems)
   fragment.find('#nav-mobile-links').append(navItems)
   fragment.find('#nav-links').append(navItems)
 

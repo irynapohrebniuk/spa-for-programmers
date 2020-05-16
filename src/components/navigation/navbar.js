@@ -1,15 +1,30 @@
 import $ from 'jquery'
-import { navItems } from './nav-items'
+import { navItems, navItemLogin, navItemCart } from './nav-items'
 
 export const navbar = () => {
+  const fragment = $('<div class="full-mode row w-100">')
     const navbar = $(`
-      <nav class="navbar navbar-expand-md navbar-light full-mode">
-        <span class="navbar-brand logo"></span>
-        <ul id="nav-links" class="navbar-nav"></ul>
-      </nav>
-    `);
+      <div class="col-10">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <span class="navbar-brand logo"></span>
+          <ul id="nav-links" class="navbar-nav"></ul>
+        </nav>
+      </div>
+    `)
 
-    navbar.find('ul').append(navItems)
+    const userNavbar = $(`
+      <div class="col-2">
+          <ul id="user-nav" class="nav justify-content-end"></ul>
+      </div>
+    `)
 
-    return navbar
+    fragment.append(navbar)
+    fragment.append(userNavbar)
+
+    navbar.find('#nav-links').append(navItems)
+
+    fragment.find('#user-nav').append(navItemLogin)
+    fragment.find('#user-nav').append(navItemCart)
+
+    return fragment
 }

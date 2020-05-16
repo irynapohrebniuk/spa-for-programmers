@@ -1,8 +1,8 @@
 import { navItem } from './nav-item';
 import { routeChange } from '../../router/route-change';
 import { routes } from '../../router/routes';
-import { navLogin } from './nav-item-login'
-import { navCart } from './nav-item-cart'
+import { navLogin, navMobileLogin } from './nav-login'
+import { navCart, navMobileCart } from './nav-cart'
 
 const navItems = () => {
 
@@ -16,17 +16,27 @@ const navItems = () => {
 }
 
 const navItemLogin = () => {
-  const navItemLogin = navLogin(() => navbar.trigger(routeChange, { path: '/login' }));
+  const navItemLogin = navLogin(() => $('#header').trigger(routeChange, { path: '/login' }));
   return navItemLogin
+}
+
+const navItemMobileLogin = () => {
+  const navItemLogin = navMobileLogin(() => $('#header').trigger(routeChange, { path: '/login' }));
+  return navItemLogin
+}
+
+const navItemMobileCart = () => {
+  const navItemMobileCart = navMobileCart(() => $('#header').trigger(routeChange, { path: '/booking' }))
+  return navItemMobileCart
 }
 
 
 
 const navItemCart = () => {
-  const navItemCart = navCart(() => navbar.trigger(routeChange, { path: '/booking' }));
+  const navItemCart = navCart(() => $('#header').trigger(routeChange, { path: '/booking' }));
   return navItemCart
 }
   
 
 
-export { navItems, navItemCart, navItemLogin }
+export { navItems, navItemCart, navItemMobileLogin, navItemLogin, navItemMobileCart }
