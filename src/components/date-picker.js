@@ -1,48 +1,36 @@
-import { filterServices } from '../common/filter-service'
-import { card } from '../components/card'
 import { routeChange } from '../router/route-change'
 
 export const datePicker = () => {
-
-    const today = new Date();
-    
-    const dateCheckIn = today.getDate();
-    const monthCheckIn = today.getMonth() + 1;
-    const yearCheckIn = today.getFullYear() + 1;
-    const checkInLastDate = monthCheckIn + '.' + dateCheckIn + '.' + yearCheckIn;
-
-    const dateCheckOut = dateCheckIn + 1;
-    const monthCheckOut = today.getMonth() + 1;
-    const yearCheckOut = today.getFullYear() + 1;
-    
-    const checkOutDate = monthCheckOut + '.' + dateCheckOut + '.' + yearCheckOut;
-    const maxCheckInDate = monthCheckOut + '.' + dateCheckOut + '.' + yearCheckOut
-
-
     let checkIn;
     let checkOut;
 
+    const checkInMax = new Date(new Date().setFullYear(new Date().getFullYear() + 1));
+
+    const checkOutMin = (checkIn) => {
+        console.log("checkIn", checkIn);
+        let d;
+        if (checkIn === undefined) {
+            d = new Date(new Date().setDate(new Date().getDate() + 1));
+        } else {
+            d = new Date(new Date(checkIn).setDate(new Date(checkIn).getDate() + 1)); 
+        }
+        console.log("checkOutMin(checkIn)", d);
+        return d;
+    }
+   
+
     const datePicker = $(`
-    <div class="mx-auto">
-    <div class="mx-auto opacity-90 rounded">
-        <div class="input-group p-2 mx-auto">
-            <div class="input-group-prepend">
-                <span class="input-group-text">
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                </span>
+        <form class="mx-auto">
+            <div class="form-row no-gutters">
+                <div class="mx-auto">
+                <div class="mx-auto opacity-90 rounded">
+                    <div id="input-group" class="input-group p-2 mx-auto">
+                        <input id="checkin" class="datePicker check-in form-control form-control-lg" placeholder="Check-in..."/>
+                        <input class="datePicker check-out form-control form-control-lg" placeholder="Check-out..."/>
+                    </div>
+                </div>
             </div>
-            <input id="checkin" class="datePicker check-in form-control form-control-lg" placeholder="Check-in..."/>
-            <div class="input-group-append">
-                <span class="input-group-text">
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                </span>
-            </div>
-            <input class="datePicker check-out form-control form-control-lg" placeholder="Check-out..."/>
-            <div class="input-group-append" id="search-btn">
-            </div>
-        </div>
-    </div>
-</div>
+        </form>
     `);
 
 
@@ -50,8 +38,8 @@ export const datePicker = () => {
         language: 'pl',
         position: 'bottom left',
         dateFormat: 'mm.dd.yyyy',
-        minDate: today,
-        maxDate: new Date(checkInLastDate),
+        minDate: new Date(),
+        maxDate: checkInMax,
         onSelect: function (date) {
             checkIn = date;
         }
@@ -62,16 +50,22 @@ export const datePicker = () => {
         language: 'pl',
         position: 'bottom right',
         dateFormat: 'mm.dd.yyyy',
-        minDate: new Date(checkOutDate),
-        // maxDate: new Date(),
+        minDate: new Date(checkOutMin(checkIn)),
+        maxDate: checkInMax,
         onSelect: function (date) {
             checkOut = date;
         }
     })
 
+   
+    
+
+    
+
+    
     const searchButton = (click) => {
         const searchButton = $(`
-        <input class="input-group-text btn-primary" type="submit" value="Submit">
+        <input id="search-btn" class="form-control form-control-lg btn-lg btn-dark" type="submit" value="Search" />
         `)
             .on('click', () => {
                 if (checkIn === undefined) {
@@ -84,7 +78,7 @@ export const datePicker = () => {
         return searchButton;
     } 
  
-    datePicker.find('#search-btn').append(searchButton);
+    datePicker.find('#input-group').append(searchButton);
 
     return datePicker;
 }
@@ -92,10 +86,3 @@ export const datePicker = () => {
 
 
 
-
-
-        // <form>
-        //     <input id="checkin" class="datePicker check-in form-control form-control-lg" placeholder="Check-in..."  type="date" required />
-        //     <input id="checkout" class="datePicker check-out form-control form-control-lg" placeholder="Check-out..." type="date" required/>
-        //     <div id="search-btn"></div>
-        // </form>
