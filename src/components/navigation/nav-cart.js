@@ -1,11 +1,16 @@
 import $ from 'jquery'
 
 const navCart = (click) => {
-    const navCart = $('<li class="icon-hover p-3"></li>')
+    const navCart = $('<li class="icon-hover p-1"></li>')
     const anchor = $('<a class="btn btn-link text-dark"></a>')
     const icon = $('<i class="fas fa-shopping-cart hover"></i>')
     const cartIcon = anchor.append(icon)
-    cartIcon.on('click', click)
+    cartIcon
+        .on('click', click)
+        .on('mouseover', function() { 
+            console.log("hej")
+           // navCart.append(modalCart)
+        });
     navCart.append(anchor)
 
     return navCart
@@ -14,7 +19,7 @@ const navCart = (click) => {
 const navMobileCart = (click) => {
     const navMobileCart = $('<li></li>')
     const anchor = $('<a class="btn btn-link text-dark"></a>')
-    const icon = $('<i class="fas fa-shopping-cart pr-3 hover"></i>')
+    const icon = $('<i class="fas fa-shopping-cart pr-2 hover"></i>')
     const text = "Your cart"
     anchor.append(icon).on('click', click);
     anchor.append(text);

@@ -8,10 +8,14 @@ export const filter = (data) => {
 
     const fragment = $('<div class="row w-100">')
 
-    const promise = filterServices.filterService(typeOfService, data.checkIn, data.checkOut)
+    const checkIn = data.checkIn;
+    const checkOut = data.checkOut;
+
+    const promise = filterServices.filterService(typeOfService, checkIn, checkOut)
         .then(rooms => {
             rooms.map(room => {
                 fragment.append(card(room))
+                
             })
             return fragment
         })

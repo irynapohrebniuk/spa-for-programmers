@@ -22,7 +22,9 @@ export let Bucket = (function() {
                     name: name,
                     price: price,
                     quantity: quantity,
-                    totalPrice: totalPrice
+                    totalPrice: totalPrice,
+                    checkIn: checkIn,
+                    checkOut: checkOut
                 }
                 console.log("room = ", room);
 
@@ -34,7 +36,6 @@ export let Bucket = (function() {
                         if (room.id == id) {
                             room.quantity += quantity;
                             room.totalPrice = room.price * room.quantity
-                            console.log("total", room.totalPrice);
                         }
                     })
                 } else {

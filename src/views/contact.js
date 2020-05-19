@@ -1,11 +1,30 @@
 import $ from 'jquery';
+import { getService } from "../common/get-service"
 
 export const contact = () => {
     const fragment = $(new DocumentFragment());
-    const container = $('<div class="container-fluid"><h2 class="text-center mt-2">Contact</h2></div>');
-    container.append('<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi accusantium similique eligendi natus suscipit blanditiis culpa delectus rem iste, beatae tenetur magnam non molestias quasi quod placeat earum, error ad!</p>');
+    const container = $('<div class="container-fluid"></div>');
     fragment.append(container);
 
+    const contact = (hotel) => {
+        return (`
+        <div class="p-4">
+            <h4>${hotel.name}</h4>
+            <div>${hotel.contact.street}</div>
+            <div>${hotel.contact.city}</div>
+            <div>${hotel.contact.country}</div>
+            <div>${hotel.contact.zipcode}</div>
+        </div>
+        `)
+    }
 
-    return Promise.resolve(fragment);
+    const promise = getService.getServiceHotelInfo()
+        .then(hotel => {
+           fragment.append(contact(hotel));
+           return fragment
+        })
+    
+    
+
+    return Promise.resolve(promise);
 }

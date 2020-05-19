@@ -1,6 +1,6 @@
 import { routeChange } from "../router/route-change";
 
-var images = require.context('../img/gallery', false);
+let images = require.context('../img/gallery', false);
 
 export const gallery = () => {
 
@@ -12,10 +12,7 @@ export const gallery = () => {
     const image = $('<img class="img-fluid">')
     image.attr('src', images(key).default)
     const column = $('<div data-aos="flip-left" class="col-sm-6 col-md-4 col-lg-3 col-xs-12">')
-    // image
-    //   .on('click', () => {
-    //     image.trigger(routeChange,{ path: '/booking' })
-    //     })
+
     column.append(image)
     row.append(column)
   })

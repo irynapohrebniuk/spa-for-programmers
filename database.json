@@ -1,36 +1,54 @@
 {
-    "hotel": [
-        {
-            "description": "Hotel SPA is an elegant 19th-century property, providing good-value bed and breakfast accommodation and friendly service. Victoria Coach Station is a 5-minute walk away and Buckingham Palace is nearby. Free Wi-Fi internet access is available and there is a 24-hour reception and a luggage store facility. Each comfortable room has a TV, telephone, tea/coffee facilities and a private bathroom with a walk-in shower. An inclusive continental breakfast is provided from 7:30 every morning."
+    "hotel": {
+        "name": "Hotel SPA",
+        "description": "Hotel SPA is an elegant 19th-century property, providing good-value bed and breakfast accommodation and friendly service. Victoria Coach Station is a 5-minute walk away and Buckingham Palace is nearby. Free Wi-Fi internet access is available and there is a 24-hour reception and a luggage store facility. Each comfortable room has a TV, telephone, tea/coffee facilities and a private bathroom with a walk-in shower. An inclusive continental breakfast is provided from 7:30 every morning.",
+        "contact": {
+            "street": "29 Saint Georges Drive",
+            "city": "London",
+            "country": "United Kingdom",
+            "zipcode": "SW1V 4DG"
         },
-        {
-            "contact": {
-                "street": "29 Saint Georges Drive",
-                "city": "London",
-                "country": "United Kingdom",
-                "zip-code": "SW1V 4DG"
-            }
-        },
-        {
-            "facilities": [
-                ["Non-smoking rooms", ""],
-                ["WiFi available in all areas"],
-                ["Free WiFi",""],
-                ["Family rooms",""],
-                ["24-hour front desk",""],
-                ["Breakfast", ""]
-            ]
-        }
-    ],
+        "facilities": [
+            "Non-smoking rooms",
+            "WiFi available in all areas",
+            "Free WiFi",
+            "Family rooms",
+            "24-hour front desk",
+            "Breakfast"
+        ]
+    },
     "rooms": [
         {
-            "id": 1,
+            "id": 0,
             "name": "Pokój unarny",
+            "info": "The Classic Grand Suite is 1,097 square feet and includes one king bed and one queen sofa bed. Perfect for both business travelers and family. Featuring a private bedroom, spacious living room, dining area, refrigerator and wet bar. As an added bonus, enjoy sweeping views of the Las Vegas Valley. ",
             "beds": 1,
             "guests": 1,
             "price": 170,
             "facilities": [
-                "Linen","Dressing Room", "Wardrobe or closet", "Tea/Coffee Maker", "Air conditioning", "Safety Deposit Box", "Soundproofing", "Ironing Facilities", "Iron", "Heating", "Carpeted",  "Electric kettle", "Desk", "Seating Area", "TV", "Telephone", "Satellite Channels", "Flat-screen TV",  "Socket near the bed", "Clothes rack", "Wake Up Service/Alarm Clock", "Wake-up service", "Executive Lounge Access"
+                "Linen",
+                "Dressing Room",
+                "Wardrobe or closet",
+                "Tea/Coffee Maker",
+                "Air conditioning",
+                "Safety Deposit Box",
+                "Soundproofing",
+                "Ironing Facilities",
+                "Iron",
+                "Heating",
+                "Carpeted",
+                "Electric kettle",
+                "Desk",
+                "Seating Area",
+                "TV",
+                "Telephone",
+                "Satellite Channels",
+                "Flat-screen TV",
+                "Socket near the bed",
+                "Clothes rack",
+                "Wake Up Service/Alarm Clock",
+                "Wake-up service",
+                "Executive Lounge Access"
             ],
             "view": "City view",
             "isnotFree": [
@@ -53,13 +71,33 @@
             ]
         },
         {
-            "id": 2,
+            "id": 1,
             "name": "Pokój binarny",
+            "info": "The Elevate King is 340 square feet and includes one king bed. Rooms feature a mini fridge, 55-inch HD TV, coffee maker, in-room safe and USB charging stations. For those who need to work while they play, the room includes a designated work area with desk. Fresh and modern, our Elevate King will take your stay to a new level.",
             "beds": 1,
             "guests": 2,
             "price": 240,
             "facilities": [
-                "Linen","Dressing Room", "Wardrobe or closet", "Child safety socket covers", "Air conditioning", "Safety Deposit Box", "Soundproofing", "Ironing Facilities", "Iron", "Heating", "Carpeted",  "Electric kettle", "Desk", "Seating Area", "TV", "Telephone", "Flat-screen TV",  "Socket near the bed", "Clothes rack", "Wake Up Service/Alarm Clock"
+                "Linen",
+                "Dressing Room",
+                "Wardrobe or closet",
+                "Child safety socket covers",
+                "Air conditioning",
+                "Safety Deposit Box",
+                "Soundproofing",
+                "Ironing Facilities",
+                "Iron",
+                "Heating",
+                "Carpeted",
+                "Electric kettle",
+                "Desk",
+                "Seating Area",
+                "TV",
+                "Telephone",
+                "Flat-screen TV",
+                "Socket near the bed",
+                "Clothes rack",
+                "Wake Up Service/Alarm Clock"
             ],
             "view": "City view",
             "isnotFree": [
@@ -74,13 +112,33 @@
             ]
         },
         {
-            "id": 3,
+            "id": 2,
             "name": "Pokój trójkowy",
+            "info": "The Elevate Queen is 340 square feet and includes two queen beds. Rooms feature a mini fridge, 55-inch HD TV, coffee maker, in-room safe and USB charging stations. For those who need to work while they play, the room includes a designated work area with desk. Fresh and modern, our Elevate Queen will take your stay to a new level. ",
             "beds": 2,
             "guests": 3,
             "price": 290,
             "facilities": [
-                "Linen","Dressing Room", "Wardrobe or closet", "Child safety socket covers", "Air conditioning", "Safety Deposit Box", "Soundproofing", "Ironing Facilities", "Iron", "Heating", "Carpeted",  "Electric kettle", "Desk", "Seating Area", "TV", "Telephone", "Flat-screen TV",  "Socket near the bed", "Clothes rack", "Wake Up Service/Alarm Clock"
+                "Linen",
+                "Dressing Room",
+                "Wardrobe or closet",
+                "Child safety socket covers",
+                "Air conditioning",
+                "Safety Deposit Box",
+                "Soundproofing",
+                "Ironing Facilities",
+                "Iron",
+                "Heating",
+                "Carpeted",
+                "Electric kettle",
+                "Desk",
+                "Seating Area",
+                "TV",
+                "Telephone",
+                "Flat-screen TV",
+                "Socket near the bed",
+                "Clothes rack",
+                "Wake Up Service/Alarm Clock"
             ],
             "view": "City view",
             "isnotFree": [
@@ -91,13 +149,33 @@
             ]
         },
         {
-            "id": 4,
+            "id": 3,
             "name": "Pokój czwórkowy",
+            "info": "The Standard Queen is 340 square feet and includes two queen beds. If you are looking for a Vegas vacation that won’t leave your wallet empty, look no further. With this classic room, you can enjoy all our new offerings at a great value! ",
             "beds": 2,
             "guests": 4,
             "price": 340,
             "facilities": [
-                "Linen","Dressing Room", "Wardrobe or closet", "Child safety socket covers", "Air conditioning", "Safety Deposit Box", "Soundproofing", "Ironing Facilities", "Iron", "Heating", "Carpeted",  "Electric kettle", "Desk", "Seating Area", "TV", "Telephone", "Flat-screen TV",  "Socket near the bed", "Clothes rack", "Wake Up Service/Alarm Clock"
+                "Linen",
+                "Dressing Room",
+                "Wardrobe or closet",
+                "Child safety socket covers",
+                "Air conditioning",
+                "Safety Deposit Box",
+                "Soundproofing",
+                "Ironing Facilities",
+                "Iron",
+                "Heating",
+                "Carpeted",
+                "Electric kettle",
+                "Desk",
+                "Seating Area",
+                "TV",
+                "Telephone",
+                "Flat-screen TV",
+                "Socket near the bed",
+                "Clothes rack",
+                "Wake Up Service/Alarm Clock"
             ],
             "view": "City view",
             "isnotFree": [

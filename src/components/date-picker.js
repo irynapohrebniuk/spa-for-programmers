@@ -42,6 +42,7 @@ export const datePicker = () => {
         maxDate: checkInMax,
         onSelect: function (date) {
             checkIn = date;
+            datePicker.find('.check-in').placeholder = date;
         }
     })
 

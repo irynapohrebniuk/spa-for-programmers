@@ -12,6 +12,7 @@ import 'aos/dist/aos.css';
 import 'aos/dist/aos';
 import './css/it-spa.scss';
 import { header } from './components/header'
+import { footer } from './components/footer'
 import { Router } from "./router/router";
 
 const main = $('<main class="container-fluid">');
@@ -32,5 +33,5 @@ AOS.init({
 
 main.before(header)
 
-// main.after(footer)
+main.after(footer)
 

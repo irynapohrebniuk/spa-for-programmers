@@ -1,4 +1,3 @@
-import $ from "jquery";
 import {Bucket} from "../bucket";
 import {cartContent} from "./cart-content";
 import {cartContentEmpty} from "./cart-empty";

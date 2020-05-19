@@ -40,11 +40,9 @@ export const filterServices = {
         return fetch(path + typeOfService)
             .then(response => response.json())
             .then(results => {
-                console.log("results befor filtering = ", results)
                 from = checkInInput
                 to = checkOutInput
                 const filterarray = results.filter(isRoomFree)
-                console.log("filterarray : ", filterarray)
                 return filterarray
             })
     }

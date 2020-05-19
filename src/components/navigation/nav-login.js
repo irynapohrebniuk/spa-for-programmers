@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 
 const navLogin = (click) => {
-    const navLogin = $('<li class="icon-hover p-3"></li>');
+    const navLogin = $('<li class="icon-hover pt-1 pb-1"></li>');
     const anchor = $('<a class="btn btn-link text-dark"></a>');
     const icon = $('<i class="fas fa-sign-in-alt"></i>');
     anchor.append(icon).on('click', click);

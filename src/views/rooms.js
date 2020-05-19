@@ -1,20 +1,10 @@
 import $ from 'jquery';
 import { getService } from '../common/get-service';
-import { card } from '../components/card';
+import { roomDetails } from '../components/card-room-details';
 
 export const rooms = () => {
 
     const fragment = $(new DocumentFragment());
-    fragment.append(`
-        <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-3 pt-3 bg-light" id="leftLayout"></div>
-            
-            <div class="col-sm-12 col-md-6 col-lg-9 justify-content-center">
-                <div class="row" id="rightLayout"></div>
-            </div>
-          </div>
-        </div>`);
 
     const typeOfService = "rooms";
 
@@ -22,9 +12,7 @@ export const rooms = () => {
         .then(rooms => {
             for (let i = 0; i < rooms.length; i++) {
                 let room = rooms[i];
-                fragment
-                    .find('#rightLayout')
-                    .append(card(room));
+                fragment.append(roomDetails(room));
             }
             return fragment;
         });
