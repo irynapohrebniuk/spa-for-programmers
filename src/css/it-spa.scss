@@ -31,17 +31,17 @@ $bg-dark: #343a40;
 
 button:focus,
 .btn:focus,
-textarea:focus, 
-textarea.form-control:focus, 
-input.form-control:focus, 
-input[type=text]:focus, 
-input[type=password]:focus, 
-input[type=email]:focus, 
-input[type=number]:focus, 
-[type=text].form-control:focus, 
-[type=password].form-control:focus, 
-[type=email].form-control:focus, 
-[type=tel].form-control:focus, 
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+[type="text"].form-control:focus,
+[type="password"].form-control:focus,
+[type="email"].form-control:focus,
+[type="tel"].form-control:focus,
 [contenteditable].form-control:focus {
   box-shadow: inset 0 0 0 #ddd;
 }
@@ -51,8 +51,9 @@ body {
   font-family: "Roboto", sans-serif;
   color: black;
   padding: 20px;
+  min-height: 100vh;
+  position: relative;
 }
-
 
 a {
   color: #6c757d;
@@ -99,7 +100,6 @@ ul {
   text-align: center;
 }
 
-
 .fa-shopping-cart,
 .fa-user,
 .fa-sign-in-alt,
@@ -108,16 +108,14 @@ ul {
   font-size: 24px;
 }
 
-input[text]:invalid {
+input:focus:required:invalid {
   border: 1px solid red;
 }
 
-input[text]:valid {
-  border: 1px solid green;
-}
-
 input[type="number"] {
-  border: 1px solid lightgray;
+  width: 80px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
 }
 
 .logo {
@@ -174,18 +172,16 @@ input[type="number"] {
   opacity: 1;
 }
 
-input[type="number"] {
-  width: 80px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-}
 
-.container-fluid {
+
+.container-fluid,
+.container {
   position: relative;
   padding-right: 0;
   padding-left: 0;
   margin-right: auto;
   margin-left: auto;
+  min-height: 100vp;
 }
 
 .cart {
@@ -237,16 +233,26 @@ input[type="number"] {
   font-size: 18px;
 }
 
-#footer {
-  clear: both;
-  position: relative;
-  margin: 0 auto;
-  padding: 10px;
-  width: 100%;
-  bottom: 0px;       
-  text-align: center;     
+.warn {
+  color: red;
+  font-size: smaller;
+  text-align: left;
+  padding-left: 20px;
 }
 
+.red-border {
+  border: 1px solid red;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  display: block;
+  width: 100%;
+  padding: 20px 40px;
+  text-align: right;
+}
 
 .no-gutters {
   margin-right: 0;

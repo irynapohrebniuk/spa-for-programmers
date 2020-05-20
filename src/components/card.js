@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { Bucket } from "../bucket";
 import { carousel } from './carousel';
 
-export const card = (room, checkIn, checkOut) => {
+export const card = (room, checkIn, checkOut, nights) => {
 
     let images_1 = require.context('../img/rooms/1', false);
     let images_2 = require.context('../img/rooms/2', false);
@@ -14,37 +14,37 @@ export const card = (room, checkIn, checkOut) => {
     const fragment = $(new DocumentFragment());
     
     fragment
-        .append(
-            `
+        .append(`
             <div class="col-sm-12 col-md-6 col-lg-3 pb-3 pt-3">
                 <div id="room-${room.id}" class="card">
                     <div class="card-body">
                         <h5 class="card-title">${room.name} </h5>
-                        <span class="topright"> ${room.price} $</span>
+                        <span class="topright"> ${room.price * nights} $</span>
+                        <h6 class="card-title">${checkIn} - ${checkOut} </h6>
+                        <h6 class="text-muted">${nights} nights</h6>
                     </div>
+                    <div class="card-btn text-center"></div>
                 </div>
             </div>
         `);
 
-        const cartButton = room => {
+        const cartButton = (room, checkIn, checkOut, nights) => {
             let bucket = Bucket.getInstance();
+            
             const button = $('<button></button>')
                 .addClass("btn btn-md btn-dark p-2 mb-5")
                 .css("width", "60%")
                 .html('Reserve')
                 .on("click", function() {
                     const quantity = 1;
-                    bucket.addRoom(room.id, room.name, room.price, quantity, room.totalPrice, checkIn, checkOut);
+                    const totalPrice = nights * room.price * quantity;
+                    bucket.addRoom(room.id, room.name, room.price, nights, quantity, totalPrice, checkIn, checkOut);
                 });
             return button;
         }
         
-        const centerDiv = () => {
-            return $('<div></div>').addClass("text-center");
-        }
 
-    fragment.find('.card').append(centerDiv);
-    fragment.find('.text-center').append(cartButton(room));
+    fragment.find('.card-btn').append(cartButton(room, checkIn, checkOut));
     fragment.find('.card').prepend(carousel(images[room.id],room.id));
 
 

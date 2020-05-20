@@ -16,20 +16,20 @@ export let Bucket = (function() {
                 return rooms.length === 0;
             },
 
-            addRoom(id, name, price, quantity, totalPrice) {
+            addRoom(id, name, price, nights, quantity, totalPrice, checkIn, checkOut) {
                 const room = {
                     id: id,
                     name: name,
                     price: price,
+                    nights: nights,
                     quantity: quantity,
                     totalPrice: totalPrice,
                     checkIn: checkIn,
                     checkOut: checkOut
                 }
-                console.log("room = ", room);
 
                 if (rooms.length === 0) {
-                    room.totalPrice = room.price * quantity;
+                    room.totalPrice = room.price * quantity * nights;
                     rooms.push(room);
                 } else if (rooms.length !== 0 && rooms.find(room => room.id == id)) {
                     rooms.map(room => {
@@ -45,11 +45,12 @@ export let Bucket = (function() {
                 localStorage.setItem('rooms', JSON.stringify(rooms))
             },
 
-            updateRoom(id, quantity, totalPrice) {
+            updateRoom(id, quantity, nights) {
                 rooms.map(room => {
                     if (room.id == id) {
                         room.quantity = quantity;
-                        room.totalPrice = room.quantity * room.price;
+                        room.nights = nights,
+                        room.totalPrice = room.quantity * room.price * nights;
                         localStorage.setItem('rooms', JSON.stringify(rooms));
                     }
                 })

@@ -14,7 +14,6 @@ export class Router {
     mount(outlet) {
         this.outlet = outlet;
         this.body.on(routeChange, (event, data) => {
-            console.log("mount(): event, data :", event, data);
             this.navigate(data);
         });
     }
@@ -32,7 +31,6 @@ export class Router {
     }
 
     navigate(data) {
-        console.log("navigate(): data :", data);
         if (this.has(data.path)) {
             const { component } = this.get(data.path);
             component(data)
@@ -44,6 +42,6 @@ export class Router {
             this.outlet.empty().append(html);
         }
 
-        history.pushState(data.path, '', data.path);
+        history.pushState(data, '', data.path);
     }
 }
