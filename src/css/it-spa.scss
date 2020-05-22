@@ -58,6 +58,11 @@ body {
 
 a {
   color: #6c757d;
+  :hover {
+      padding: 10px 5px;
+      background-color: lightblue;
+      border-radius: 10px;
+    }
 }
 
 ul {
@@ -70,30 +75,11 @@ ul {
     display: block;
     padding-left: 20px;
     padding-right: 20px;
-    a:hover {
-      background-color: lightblue;
-      width: 150px;
-      text-align: left;
-    }
+    
   }
 }
 
-.icon-hover {
-  a:hover {
-    display: block;
-    background-color: lightblue;
-    border-radius: 30px;
-  }
-}
 
-.input-icons i {
-  position: absolute;
-}
-
-.input-icons {
-  width: 100%;
-  margin-bottom: 10px;
-}
 
 .input-field {
   width: 100%;
@@ -114,9 +100,9 @@ input:focus:required:invalid {
 }
 
 input[type="number"] {
-  width: 80px;
+  width: 60px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 1px solid lightblue;
 }
 
 .logo {
@@ -146,7 +132,12 @@ input[type="number"] {
   &--modal {
     z-index: 999;
     position: absolute;
-    width: 0px;
+    top: 50px;
+    right: 0;
+    width: 450px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: lightblue;
     transition: width 1s linear;
   }
 }
@@ -183,8 +174,8 @@ input[type="number"] {
 
 .topcenter {
   position: absolute;
-  top: 30px;
-  text-align: center;
+  top: 0;
+  right: 0;
   font-size: 18px;
 }
 
@@ -200,13 +191,15 @@ input[type="number"] {
 }
 
 #footer {
-  position: relative;
-  bottom: 0;
-  left:0;
-  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -80px;
   width: 100%;
+  display: block;
   padding: 20px 40px;
+  border-top: 1px solid #ddd;
   text-align: right;
+  height: 80px;
 }
 
 .no-gutters {
@@ -220,6 +213,7 @@ input[type="number"] {
   }
 }
 
+/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .mobile {
     display: block;
@@ -227,8 +221,10 @@ input[type="number"] {
   .full-mode {
     display: none;
   }
+
 }
 
+/* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .mobile {
     display: block;

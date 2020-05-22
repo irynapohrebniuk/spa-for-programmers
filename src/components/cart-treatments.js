@@ -8,7 +8,7 @@ export const cartTreatments = () => {
     const rooms = bucket.getRooms();
     const treatments = bucket.getTreatments();
 
-    const ul = $('<ul class="list-group">');
+    const ul = $('<ul class="list-group list-group-flush">');
 
     const item = (treatment) => {
 

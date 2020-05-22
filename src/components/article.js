@@ -16,7 +16,7 @@ export const article = (hotel) => {
         <div class="row p-3 bg-light">
             <div class="col-md-8 col-sm-12 text-center p-3">
                 <div class="row">
-                    <div class="col-md-4 col-sm-12" id="hotel-img">
+                    <div  class="col-md-4 col-sm-12 d-none d-sm-none d-md-block" id="hotel-img">
                         
                     </div>
                     <div class="col-md-8 col-sm-12">

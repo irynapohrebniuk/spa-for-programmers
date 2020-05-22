@@ -35,7 +35,8 @@ export const dateSelector = () => {
                 id="${id}"
                 class="form-control form-control-lg" 
                 pattern="(?:(?:0[1-9]|1[0-2])[\/\\-. ]?(?:0[1-9]|[12][0-9])|(?:(?:0[13-9]|1[0-2])[\/\\-. ]?30)|(?:(?:0[13578]|1[02])[\/\\-. ]?31))[\/\\-. ]?(?:19|20)[0-9]{2}" 
-                placeholder="mm.dd.yyyy" required/>
+                placeholder="mm.dd.yyyy"
+                autocomplete="off" required/>
     `).on('blur', (e) => {
         const elem = e.target;
         if (!elem.checkValidity()) {

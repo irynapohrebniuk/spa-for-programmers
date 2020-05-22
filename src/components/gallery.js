@@ -4,7 +4,7 @@ let images = require.context('../img/gallery', false);
 
 export const gallery = () => {
 
-  const gallery = $(`<div id="gallery"></div>`)
+  const gallery = $(`<div id="gallery" class="d-none d-sm-none d-md-block"></div>`)
 
   const row = $('<div class="row no-gutters">')
 
