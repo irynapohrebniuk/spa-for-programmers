@@ -50,9 +50,10 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   color: black;
-  padding: 20px;
+  padding: 0 20px;
   min-height: 100vh;
   position: relative;
+  overflow: scroll;
 }
 
 a {
@@ -128,52 +129,6 @@ input[type="number"] {
   background-size: 100px 82px;
 }
 
-.opacity-0 {
-  opacity: 0;
-}
-
-.opacity-10 {
-  opacity: 0.1;
-}
-
-.opacity-20 {
-  opacity: 0.2;
-}
-
-.opacity-30 {
-  opacity: 0.3;
-}
-
-.opacity-40 {
-  opacity: 0.4;
-}
-
-.opacity-50 {
-  opacity: 0.5;
-}
-
-.opacity-60 {
-  opacity: 0.6;
-}
-
-.opacity-70 {
-  opacity: 0.7;
-}
-
-.opacity-80 {
-  opacity: 0.8;
-}
-
-.opacity-90 {
-  opacity: 0.9;
-}
-
-.opacity-100 {
-  opacity: 1;
-}
-
-
-
 .container-fluid,
 .container {
   position: relative;
@@ -245,7 +200,7 @@ input[type="number"] {
 }
 
 #footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   left:0;
   display: block;

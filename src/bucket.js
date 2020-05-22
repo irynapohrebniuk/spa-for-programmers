@@ -11,9 +11,16 @@ export let Bucket = (function() {
             getRooms() {
                 return rooms;
             },
+            getTreatments() {
+                return treatments;
+            },
 
             isEmpty() {
-                return rooms.length === 0;
+                return (rooms.length === 0 && treatments.length === 0);
+            },
+
+            isEmptyItems(items) {
+                return items.length === 0;
             },
 
             addRoom(id, name, price, nights, quantity, totalPrice, checkIn, checkOut) {
@@ -28,10 +35,10 @@ export let Bucket = (function() {
                     checkOut: checkOut
                 }
 
-                if (rooms.length === 0) {
+                if (this.isEmptyItems(rooms)) {
                     room.totalPrice = room.price * quantity * nights;
                     rooms.push(room);
-                } else if (rooms.length !== 0 && rooms.find(room => room.id == id)) {
+                } else if (!this.isEmptyItems(rooms) && rooms.find(room => room.id == id)) {
                     rooms.map(room => {
                         if (room.id == id) {
                             room.quantity += quantity;
@@ -39,7 +46,7 @@ export let Bucket = (function() {
                         }
                     })
                 } else {
-                    room.totalPrice = room.price * quantity;
+                    room.totalPrice = room.price * quantity * nights;
                     rooms.push(room);
                 }
                 localStorage.setItem('rooms', JSON.stringify(rooms))
@@ -48,9 +55,11 @@ export let Bucket = (function() {
             updateRoom(id, quantity, nights) {
                 rooms.map(room => {
                     if (room.id == id) {
+                        console.log("nights = ", nights)
                         room.quantity = quantity;
-                        room.nights = nights,
-                        room.totalPrice = room.quantity * room.price * nights;
+                        room.nights = nights;
+                        room.totalPrice = room.quantity * room.price * room.nights;
+                        console.log(room.quantity, room.price, room.nights);
                         localStorage.setItem('rooms', JSON.stringify(rooms));
                     }
                 })
@@ -60,6 +69,48 @@ export let Bucket = (function() {
                 const index =  rooms.indexOf(id);
                 rooms.splice(index,1);
                 localStorage.setItem('rooms', JSON.stringify(rooms));
+            },
+
+            addTreatment(id, name, price, quantity, totalPrice) {
+                const treatment = {
+                    id: id,
+                    name: name,
+                    price: price,
+                    quantity: quantity,
+                    totalPrice: totalPrice
+                }
+
+                if (this.isEmptyItems(treatments)) {
+                    treatment.totalPrice = treatment.price * quantity;
+                    treatments.push(treatment);
+                } else if (!this.isEmptyItems(treatments) && treatments.find(treatment => treatment.id == id)) {
+                    treatments.map(treatment => {
+                        if (treatment.id == id) {
+                            treatment.quantity += quantity;
+                            treatment.totalPrice = treatment.price * treatment.quantity
+                        }
+                    })
+                } else {
+                    treatment.totalPrice = treatment.price * quantity;
+                    treatments.push(treatment);
+                }
+                localStorage.setItem('treatments', JSON.stringify(treatments))
+            },
+
+            updateTreatment(id, quantity) {
+                treatments.map(treatment => {
+                    if (treatment.id == id) {
+                        treatment.quantity = quantity;
+                        treatment.totalPrice = treatment.quantity * treatment.price;
+                        localStorage.setItem('treatments', JSON.stringify(treatments));
+                    }
+                })
+            },
+
+            deleteTreatment(id) {
+                const index =  treatments.indexOf(id);
+                treatments.splice(index,1);
+                localStorage.setItem('treatments', JSON.stringify(treatments));
             }
         };
     }

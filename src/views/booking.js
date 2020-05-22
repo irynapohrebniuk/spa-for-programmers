@@ -1,19 +1,40 @@
-import { cartContent } from '../components/cart-content';
+import { cartRooms } from '../components/cart-rooms';
+import { cartTreatments } from '../components/cart-treatments';
 import { cartContentEmpty } from '../components/cart-empty';
-import {Bucket} from "../bucket";
+import { Bucket } from "../bucket";
+import { totalSum } from '../common/calc'
 
 
 export const booking = () => {
+
     let bucket = Bucket.getInstance();
-    let page = () => {
-        let content;
+    const rooms = bucket.getRooms();
+    const treatments = bucket.getTreatments();
+    
+    const fragment = $('<div class="container mb-3">');
+
+    const total = $(
+                `<ul="list-group">
+                    <li class="list-group-item bg-light text-right">
+                        <h4>
+                            <span class="m-2">Total:</span>
+                            <span id="total" class="m-2">${totalSum(rooms,treatments)}</span>
+                            <span class="m-2">$</span>
+                        </h4>
+                    </li>
+                </ul>`);
+
+    const page = () => {
+        
         if (!bucket.isEmpty()) {
-            let rooms = bucket.getRooms();
-            content = cartContent(rooms);
+            fragment.append(cartRooms());
+            fragment.append(cartTreatments());
+            fragment.append(total);
         } else {
-            content = cartContentEmpty();
+            fragment.append(cartContentEmpty());
         };
-        return content;
+
+        return fragment;
     }
 
     return Promise.resolve(page);

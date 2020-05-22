@@ -1,4 +1,5 @@
 import { navItems, navItemMobileCart, navItemMobileLogin } from './nav-items'
+
 const navbarMobile = () => {
     const navbarMobile = $(`
         <div class="pos-f-t mobile">

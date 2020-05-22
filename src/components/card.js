@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import { Bucket } from "../bucket";
 import { carousel } from './carousel';
+import { cardIcons } from './card-icons';
 
 export const card = (room, checkIn, checkOut, nights) => {
 
@@ -13,8 +14,7 @@ export const card = (room, checkIn, checkOut, nights) => {
 
     const fragment = $(new DocumentFragment());
     
-    fragment
-        .append(`
+    const card = (`
             <div class="col-sm-12 col-md-6 col-lg-3 pb-3 pt-3">
                 <div id="room-${room.id}" class="card">
                     <div class="card-body">
@@ -28,14 +28,14 @@ export const card = (room, checkIn, checkOut, nights) => {
             </div>
         `);
 
-        const cartButton = (room, checkIn, checkOut, nights) => {
+        const addRoomButton = (room, checkIn, checkOut, nights) => {
             let bucket = Bucket.getInstance();
             
             const button = $('<button></button>')
                 .addClass("btn btn-md btn-dark p-2 mb-5")
                 .css("width", "60%")
                 .html('Reserve')
-                .on("click", function() {
+                .on('click', function() {
                     const quantity = 1;
                     const totalPrice = nights * room.price * quantity;
                     bucket.addRoom(room.id, room.name, room.price, nights, quantity, totalPrice, checkIn, checkOut);
@@ -43,11 +43,12 @@ export const card = (room, checkIn, checkOut, nights) => {
             return button;
         }
         
-
-    fragment.find('.card-btn').append(cartButton(room, checkIn, checkOut));
+    fragment.append(card);
     fragment.find('.card').prepend(carousel(images[room.id],room.id));
-
-
+    fragment.find('.card-body').append(cardIcons("Beds", room.beds, "bed"));
+    fragment.find('.card-body').append(cardIcons("Quests", room.guests, "user"));
+    fragment.find('.card-btn').append(addRoomButton(room, checkIn, checkOut, nights));
+    
     return fragment;
 }
 

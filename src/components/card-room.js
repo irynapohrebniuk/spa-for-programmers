@@ -1,16 +1,7 @@
 import $ from 'jquery';
-
+import { cardIcons } from './card-icons'
 
 export const cardRoom = (room) => {
-
-    const icons = (detail, quantity, name) => {
-        const fragment = $(`<div>${detail}: </div>`);
-        const span = `<span><i class="fas fa-${name} icon-hover m-1"></i></span>`;
-        for (let i = 0; i < quantity; i++) {
-            fragment.append(span);
-        }
-        return fragment;
-    }
 
     const fragment = $(new DocumentFragment());
     fragment
@@ -33,8 +24,8 @@ export const cardRoom = (room) => {
             `
         )
 
-        fragment.find("#room-details").append(icons("Beds", room.beds, "bed"));
-        fragment.find("#room-details").append(icons("Quests", room.guests, "user"));
+        fragment.find("#room-details").append(cardIcons("Beds", room.beds, "bed"));
+        fragment.find("#room-details").append(cardIcons("Quests", room.guests, "user"));
 
     return fragment;
 }

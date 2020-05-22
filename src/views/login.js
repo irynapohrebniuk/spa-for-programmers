@@ -6,22 +6,19 @@ import { button } from "../components/navigation/button";
 export const login = () => {
     const fragment = $(new DocumentFragment());
 
-    // the main container
+   
     const container = $('<div class="container-fluid"></div>');
 
-    // bootstrap grid
     const row = $('<div class="row"></div>');
     const column_1 = $('<div class="col m-3"></div>');
     const column_2 = $('<div class="col m-3" id="login_form"></div>');
     const column_3 = $('<div class="col m-3"></div>');
     const column_4 = $('<div class="col m-3"></div>');
 
-    // login form in the left
     const loginTitle = "Log in";
     const loginButtonName = "Log in";
     column_2.append(loginForm(loginTitle, loginButtonName));
 
-    // register information in the right
     const register_info = $(`<div><h1 class="h3 mb-3 font-weight-normal">REGISTER</div><div>If you still don't have a SPA account, use this option to access the registration form.</div><div>By giving us your details, purchasing in SPA will be faster and an enjoyable experience.</div>`);
     const registerButtonName = 'CREATE ACCOUNT';
     const registerButton = button(registerButtonName, () => container.trigger(routeChange, { path: '/signup' }));

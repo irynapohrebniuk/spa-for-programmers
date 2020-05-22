@@ -16,13 +16,14 @@ export const dateSelector = () => {
         return checkOutMin;
     }
 
+    const clear = () => {
+        if ($("#error-message")) $("#error-message").remove();
+    }
+
     const dateSelectorForm = $(`
         <form id="dateSelectorForm" class="pb-3">
             <div class="form-row no-gutters">
-                <div class="mx-auto opacity-90 rounded">
-                    <div id="input-group" class="input-group p-2 mx-auto">
-                    </div>  
-                </div>
+                    <div id="input-group" class="input-group p-2 mx-auto"></div>  
             </div>
         </form>
     `);
@@ -38,12 +39,12 @@ export const dateSelector = () => {
     `).on('blur', (e) => {
         const elem = e.target;
         if (!elem.checkValidity()) {
-            if ($("#error-message")) $("#error-message").remove();
+            clear();
             const message = $('<div id="error-message" class="warn">');
             message.html(elem.validationMessage);
             $('#dateSelectorForm').append(message);
             } else {
-                if ($("#error-message")) $("#error-message").remove();
+                clear();
             }
         })
     }
@@ -56,15 +57,14 @@ export const dateSelector = () => {
                 event.preventDefault();
                 const message = $('<div id="error-message" class="warn">');
                 if (checkIn === undefined || checkOut === undefined) {
-                    if ($("#error-message")) $("#error-message").remove();
-                    message.html("Please fill form out");
-                    $('#dateSelectorForm').append(message);
+                    
+                    return;
                 } else if (new Date(checkIn) >= new Date(checkOut)) {
-                    if ($("#error-message")) $("#error-message").remove();
+                    clear;
                     message.html("Check-in date should be less than check-out date")
                     $('#dateSelectorForm').append(message);
                 } else {
-                    if ($("#error-message")) $("#error-message").remove();
+                    clear;
                     $('#header').trigger(routeChange, { path: '/filter', checkIn: checkIn, checkOut: checkOut });
                 }
             })

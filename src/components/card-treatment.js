@@ -35,14 +35,10 @@ const cartButton = treatment => {
         .html('Reserve')
         .on("click", function() {
             const quantity = 1;
-            const checkIn = $('.check-in').val();
-            const checkOut = $('.check-out').val();
-            bucket.addRoom(treatment.id, treatment.name, treatment.price, quantity, room.totalPrice);
+            bucket.addTreatment(treatment.id, treatment.name, treatment.price, quantity, treatment.totalPrice);
         });
     return button;
 }
-
-
 
 const centerDiv = () => {
     return $('<div></div>').addClass("text-center");
