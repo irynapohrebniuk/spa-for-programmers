@@ -8,37 +8,37 @@ export const cartTreatments = () => {
     const rooms = bucket.getRooms();
     const treatments = bucket.getTreatments();
 
-    const ul = $('<ul class="list-group list-group-flush">');
+    const ul = $('<ul id="cart-item-t-${treatment.id}" class="list-group list-group-flush">');
 
     const item = (treatment) => {
 
         return (`
-         <div id="cart-t-item-${treatment.id}" class="row align-items-center">
-            <div class="col-md-6 col-sm-12 align-middle">
-                 <h5>${treatment.name}</h5>
+         <div class="row align-items-center">
+            <div class="col col-md-5 col-sm-8">
+                 <h6>${treatment.name}</h6>
                  <div class="text-muted">
                     <span id="price-t-${treatment.id}">${treatment.price}</span>
                     <span> $</span>
                     <span>for one treatment</span>
                  </div>
             </div> 
-            <div class="col-md-2 col-sm-12">
+            <div class="col col-md-2 col-sm-1">
                 &nbsp;
             </div>
-             <div class="col-md-2 col-sm-12 quantity">
+             <div class="col col-md-2 col-sm-1 quantity align-middle">
                  <input id="quantity-t-${treatment.id}" type="number" min="1" max="20" placeholder="${treatment.quantity}" value="${treatment.quantity}" class="form-control text-center" aria-label="Quantity" pattern="[1-9]">
              </div>
 
-             <div class="col-md-2 col-sm-12 text-center">
+             <div class="col col-md-2 col-sm-1 text-center">
                 <span id="total-price-t-${treatment.id}">${treatment.totalPrice} </span>
                 <span>$</span>
              </div>
+             <div class="col col-md-1 col-sm-1 btn-del bg-transparent text-center align-middle">
+                <a>
+                    <i id="btn-del-t-${treatment.id}" class="fa fa-times btn" aria-hidden="true"></i>
+                </a>
+            </div>
          </div> 
-         <div class="btn-delete topright bg-transparent">
-            <a id="btn-del-t-${treatment.id}" class="btn btn-del-t btn-link text-dark">
-                <i class="fa fa-times" aria-hidden="true"></i>
-            </a>
-        </div>
          `);
     }
 
@@ -46,13 +46,15 @@ export const cartTreatments = () => {
 
     ul.append(li);
 
-    ul.find('.btn-del-t').on('click', (e) => {
+    ul.find('.btn-del').on('click', (e) => {
         const btn_id = e.target.id;
         const id = btn_id.slice(10);
+        console.log("id", id);
         let row = $('#cart-item-t-' + id);
         row.remove();
         bucket.deleteTreatment(id);
-        location.reload();
+        $('#total').html(totalSum(rooms,treatments));
+        if (bucket.isEmpty) location.reload();
     });
 
     ul.find('.quantity').on('change', (e) => {

@@ -21,38 +21,38 @@ export const dateSelector = () => {
     }
 
     const dateSelectorForm = $(`
-        <form id="dateSelectorForm" class="pb-3">
-            <div class="form-row no-gutters">
-                    <div id="input-group" class="input-group p-2 mx-auto"></div>  
-            </div>
+        <form id="dateSelectorForm">
+            <div id="input-group" class="row no-gutters input-group p-2 mx-auto"></div>  
         </form>
     `);
-    
 
+    
+    
     const input = (id) => {
         return $(`
-            <input 
-                id="${id}"
-                class="form-control form-control-lg" 
-                pattern="(?:(?:0[1-9]|1[0-2])[\/\\-. ]?(?:0[1-9]|[12][0-9])|(?:(?:0[13-9]|1[0-2])[\/\\-. ]?30)|(?:(?:0[13578]|1[02])[\/\\-. ]?31))[\/\\-. ]?(?:19|20)[0-9]{2}" 
-                placeholder="mm.dd.yyyy"
-                autocomplete="off" required/>
-    `).on('blur', (e) => {
-        const elem = e.target;
-        if (!elem.checkValidity()) {
-            clear();
-            const message = $('<div id="error-message" class="warn">');
-            message.html(elem.validationMessage);
-            $('#dateSelectorForm').append(message);
-            } else {
-                clear();
-            }
-        })
+                <input 
+                    id="${id}"
+                    class="form-control form-control-lg rounded-0" 
+                    pattern="(?:(?:0[1-9]|1[0-2])[\/\\-. ]?(?:0[1-9]|[12][0-9])|(?:(?:0[13-9]|1[0-2])[\/\\-. ]?30)|(?:(?:0[13578]|1[02])[\/\\-. ]?31))[\/\\-. ]?(?:19|20)[0-9]{2}" 
+                    placeholder="mm.dd.yyyy"
+                    autocomplete="off" required/>
+                    `).on('blur', (e) => {
+                        const elem = e.target;
+                        if (!elem.checkValidity()) {
+                            clear();
+                            const message = $('<div id="error-message" class="warn">');
+                            message.html(elem.validationMessage);
+                            $('#dateSelectorForm').append(message);
+                            } else {
+                                clear();
+                            }
+                        })
+                        
     }
 
     const searchButton = (click) => {
         const searchButton = $(`
-        <input id="search-btn" class="form-control form-control-lg btn-lg btn-dark" type="submit" value="Search" />
+        <input id="search-btn" class="form-control form-control-lg btn-lg btn-dark rounded-0" type="submit" value="Search" />
         `)
             .on('click', (event) => {
                 event.preventDefault();
@@ -72,9 +72,15 @@ export const dateSelector = () => {
         return searchButton;
     }
 
-    dateSelectorForm.find('#input-group').append(input("checkin"));
-    dateSelectorForm.find('#input-group').append(input("checkout"));
-    dateSelectorForm.find('#input-group').append(searchButton);
+    const col_1 = $('<div class="col col-lg-2 col-md-3 col-sm-12">');
+    const col_2 = $('<div class="col col-lg-2 col-md-3 col-sm-12">');
+    const col_3 = $('<div class="col col-lg-1 col-md-2 col-sm-12">');
+
+    const checkin = col_1.append(input("checkin"));
+    const checkout = col_2.append(input("checkout"));
+    const btn = col_3.append(searchButton);
+
+    dateSelectorForm.find('#input-group').append(checkin, checkout,btn);
 
     dateSelectorForm.find('#checkin').datepicker({
         language: 'pl',

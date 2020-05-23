@@ -1,10 +1,13 @@
 import $ from 'jquery';
 import { getService } from '../common/get-service';
 import { roomDetails } from '../components/card-room-details';
+import { dateSelector } from '../components/date-selector'
 
 export const rooms = () => {
 
     const fragment = $(new DocumentFragment());
+
+    fragment.append(dateSelector)
 
     const typeOfService = "rooms";
 

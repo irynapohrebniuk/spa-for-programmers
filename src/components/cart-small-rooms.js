@@ -21,7 +21,6 @@ export const cartSmallRooms = () => {
             </div> 
             <div class="col-md-2 text-muted text-center">
                 <span id="nights-${room.id}">${room.nights} </span> 
-                <span>nights</span>
             </div>
             <div class="col-md-2 quantity text-center">
                 ${room.quantity}

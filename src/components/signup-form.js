@@ -3,22 +3,22 @@ import { alert } from "../components/alert";
 
 export const signupForm = (title, buttonTitle) => {
     const fragment = $(new DocumentFragment());
-    const container = $('<div></div>');
+    const container = $('<div class="col-md-4 col-sm-12 mx-auto"></div>');
     const form = $(
         `<form>
-        <h1 class="h3 mb-3 font-weight-normal">${title.toUpperCase()}</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" autocomplete="email" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" autocomplete="current-password" required>
-        <div class="checkbox mb-3">
-        <p>
-        <label class="m-2">
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        </p>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">${buttonTitle}</button>
+            <h1 class="h3 mb-3 font-weight-normal">${title.toUpperCase()}</h1>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" autocomplete="email" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" autocomplete="current-password" required>
+            <div class="checkbox mb-3">
+            <p>
+            <label class="m-2">
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            </p>
+            </div>
+            <button class="btn btn-lg btn-dark btn-block" type="submit">${buttonTitle}</button>
       </form>`
     );
 
