@@ -1,71 +1,73 @@
 # IT SPA
 
-Projekt polega na napisaniu aplikacji Single Page Application dla ośrodka SPA dedykowanego programistom.
+Aplikacja Single Page Application dla ośrodka SPA dedykowanego programistom.
 
-Aplikacja powinna umożliwiać: 
+Aplikacja umożliwia: 
 
+- Wybór daty przyjazdu i wyjazdu oraz pokoju
+- Dodawanie pokoju do koszyka
 - Przeglądanie dostępnych zabiegów
 - Dodawanie wybranych zabiegów do koszyka
-- Wybór daty przyjazdu i wyjazdu oraz pokoju  
-- Rejestrację użytkownika (opcjonalnie)
-- Logowanie użytkownika (opcjonalnie)
+- Rejestrację użytkownika 
+- Logowanie użytkownika 
 - Podsumowanie składanego zamówienia
-
-## Booking
-
-Stwórz komponent koszyka, który wyświetla podsumowanie zamówienia.
-Koszyk powinien też umożliwiać nanoszenie poprawek do zamówienia.
-Użytkownik nie może wybrać daty przyjazdu wcześniejszej niż bieżąca.
-Wybrana data wyjazdu nie może być dalsza niż rok od daty przyjazdu.
-
-## Rejestracja
-
-Stwórz komponent rejestracji użytkownika z opcjonalnym miernikiem siły hasła.
-Rejestracja polega na zapisaniu danych użytkownika (e-mail i hasła) w pliku `database.json`.
-Nie powinna być możliwa rejestracja użytkownika o identycznym adresie e-mail.
-
-## Logowanie
-
-Stwórz komponent logowania użytkownika, który opcjonalnie będzie wyświetlał avatar użytkownika.
-Logowanie polega na porównaniu podanych przez użytkownika danych (e-mail i hasła) z tymi w pliku `database.json`.
 
 ## Pokoje
 
-Bazę przykładowych pokoi w ośrodku IT SPA znajdziesz w pliku `database.json`.
-Możesz dowolnie zmienić istniejące pokoje lub dodać swoje własne. 
+Baza pokoi w ośrodku IT SPA znajduje się w pliku `database.json`.
+Pokoje wyświetlają się poprzez meni "Rooms".
 
 ## Zabiegi 
 
-Bazę przykładowych zabiegów ośrodka IT SPA znajdziesz w pliku `database.json`.
-Możesz dowolnie zmienić istniejące zabiegi lub dodać swoje własne. 
+Baza zabiegów ośrodka IT SPA znajduje się w pliku `database.json`.
+Zabiegi wyświetlają się poprzez meni "Treatments".
 
-## Koszyk
+## Booking
 
-Stwórz komponent koszyka, który po najechaniu myszką będzie wyświetlał dodane pokoje i zabiegi.
-Koszyk musi przetrwać przeładowanie strony, dlatego spróbuj wykorzystać ciasteczka (Cookies).
+Komponent koszyka wyświetla podsumowanie zamówienia.
+Komponent koszyka po najechaniu myszką będzie wyświetlał dodane pokoje i zabiegi bez możliwości redaguwania i po kliknięciu full koszyk z możliwością redagowania. Koszyk umożliwia nanoszenie poprawek do zamówienia (można zmienić ilość pokoi albo zabiegów, usunąć zabieg czy pokój).
+Żeby koszyk przetrwał przeładowanie strony, wykorzystane localStorage. Obiekt localStorage przechowuje dane bez daty ważności. Dane nie zostaną usunięte po zamknięciu przeglądarki i będą dostępne następnego dnia, tygodnia lub roku.
 
-## Technologie
+
+## Wybór daty przyjazdu i odjazdu
+
+Komponent dateselector pozwala użytkownikowi wybrać daty przyjazdu i odjazdu, sprawdza dostępność pokoi. Filtrowane pokoje można dodać do koszyka. 
+
+## Rejestracja
+
+Komponent rejestracji użytkownika korzysta z JSON Server Auth (https://www.npmjs.com/package/json-server-auth). 
+Rejestracja polega na zapisaniu danych użytkownika (e-mail i hasła) w pliku `users.json`.
+
+## Logowanie
+
+Komponent logowania użytkownika polega na porównaniu podanych przez użytkownika danych (e-mail i hasła) z tymi w pliku `users.json`.
+
+## Wykorzystane technologie
 
 - HTML, Bootstrap
-- CSS, Sass, LESS
+- CSS, Sass
 - JavaScript, jQuery
-- Node, Express
 
-Postaraj się korzystać z ECMAScript 6.
+## Odpalanie projektu
 
-Do interakcji z serwerem bazy danych wykorzystaj `fetch`.
-Jeśli lubisz eksperymenty, zainstaluj pakiet `axios`.
+Wersja developerska:
 
-## Ocena
+```bash
+npm run dev
+```
+Bazy danych:
 
-Zamieść gotowy projekt na swoim GitHubie.
-Postaraj się oddać projekt do końca maja 2020.
+```bash
+npm run db
+```
+```bash
+npm run users
+```
 
-## Przykłady
+Wersja produkcyjna:
 
-Strony, którymi możesz się inspirować: 
+```bash
+npm run prod
+```
 
-- afrodyta-spa.pl
-- bukowypark.pl
-- hotelczarnypotok.pl
-- hotelniemcza.pl
+
