@@ -13,8 +13,8 @@
   "scripts": {
     "prod": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --config webpack.dev.js --port 4000",
-    "db": "json-server --watch database.json",
-    "user": "json-server users.json -m ./node_modules/json-server-auth --port 3000"
+    "db": "json-server --watch database.json --port 3000",
+    "users": "json-server users.json -m ./node_modules/json-server-auth --port 3001"
   },
   "repository": {
     "type": "git",

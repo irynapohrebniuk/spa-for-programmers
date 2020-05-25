@@ -1,7 +1,7 @@
-import $ from 'jquery';
 import { getService } from '../common/get-service';
 import { roomDetails } from '../components/card-room-details';
 import { dateSelector } from '../components/date-selector'
+import { alert } from '../components/alert'
 
 export const rooms = () => {
 
@@ -18,7 +18,10 @@ export const rooms = () => {
                 fragment.append(roomDetails(room));
             }
             return fragment;
-        });
+        })
+        .catch((error) => {
+            return fragment.prepend(alert(error.message));
+        })
 
     return Promise.resolve(promise);
 

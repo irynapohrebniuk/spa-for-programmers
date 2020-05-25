@@ -18,10 +18,13 @@ export const cartRooms = () => {
                     <div class='btn btn-room text-left pl-0'>
                         <h6 id="button-r-${room.id}">${room.name}</h6>
                     </div>
+                    <a class="topright btn-del bg-transparent">
+                        <i id="btn-del-r-${room.id}" class="fa fa-times btn" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
             <div class="row align-items-center">
-                <div class="col col-md-5 col-sm-8">
+                <div class="col col-md-5 col-sm-6">
                     <div>Check-in: ${room.checkIn}</div> 
                     <div>Check-out: ${room.checkOut}</div>
                     <div class='text-left pl-0'>
@@ -42,10 +45,7 @@ export const cartRooms = () => {
                     <span id="total-price-r-${room.id}">${room.totalPrice} </span>
                     <span>$</span>
                 </div>
-                <div  class="col col-md-1 col-sm-1 btn-del bg-transparent text-center align-middle">
-                    <a>
-                        <i id="btn-del-r-${room.id}" class="fa fa-times btn" aria-hidden="true"></i>
-                    </a>
+                <div  class="col col-md-1 col-sm-1">
                 </div>
             </div> 
         `);

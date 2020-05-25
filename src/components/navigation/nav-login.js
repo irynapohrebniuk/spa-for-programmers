@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 const navLogin = (click) => {
     const navLogin = $('<li class="icon-hover pt-1 pb-1"></li>');
-    const anchor = $('<a class="btn btn-link text-dark"></a>');
+    const anchor = $('<a id="user-icon" class="btn btn-link text-dark"></a>');
     const icon = $('<i class="fas fa-sign-in-alt"></i>');
     anchor.append(icon).on('click', click);
     navLogin.append(anchor);
@@ -12,7 +12,7 @@ const navLogin = (click) => {
 
 const navMobileLogin = (click) => {
     const navLogin = $('<li></li>');
-    const anchor = $('<a class="btn btn-link text-dark"></a>');
+    const anchor = $('<a id="user-icon-mobile" class="btn btn-link text-dark"></a>');
     const icon = $('<i class="fas fa-sign-in-alt pr-3"></i>');
     const text = "Log in"
     anchor.append(icon).on('click', click);

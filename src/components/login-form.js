@@ -1,7 +1,7 @@
 import $ from "jquery";
 import { routeChange } from "../router/route-change";
 import { navItemAccount } from "./navigation/nav-item-account";
-import { alert } from "../components/alert";
+import { alert } from "./login-alert";
 
 export const loginForm = (title, buttonTitle) => {
     const fragment = $(new DocumentFragment());
@@ -38,7 +38,7 @@ export const loginForm = (title, buttonTitle) => {
 
         let request = $.ajax({
             method: "POST",
-            url: "http://localhost:3004/login",
+            url: "http://localhost:3001/login",
             data: {email: `${email}`, password: `${password}`},
             dataType: "json"
         });
@@ -46,8 +46,8 @@ export const loginForm = (title, buttonTitle) => {
         request.done(function (msg) {
             // console.log("login");
             loginForm.trigger(routeChange, { path: '/rooms' });
-            $("#login").remove();
-            $("#userMenu").prepend(navItemAccount);
+            $('#user-icon').html(('<i class="fas fa-user pr-3"></i>'));
+            $('#user-icon-mobile').html(('<i class="fas fa-user pr-3"></i>'));
         });
 
         request.fail(function (jqXHR, textStatus, error) {

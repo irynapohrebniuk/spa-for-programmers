@@ -1,5 +1,5 @@
-import $ from 'jquery';
 import { getService } from "../common/get-service"
+import { alert } from '../components/alert'
 
 export const contact = () => {
     const fragment = $(new DocumentFragment());
@@ -22,6 +22,9 @@ export const contact = () => {
         .then(hotel => {
            fragment.append(contact(hotel));
            return fragment
+        })
+        .catch((error) => {
+            return fragment.prepend(alert(error.message));
         })
     
     

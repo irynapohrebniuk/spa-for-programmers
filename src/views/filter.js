@@ -1,6 +1,6 @@
-import $ from 'jquery';
 import { filterServices } from '../common/filter-service';
 import { card } from '../components/card'
+import { alert } from '../components/alert'
 
 export const filter = (data) => {
     
@@ -20,6 +20,9 @@ export const filter = (data) => {
                 fragment.append(card(data, checkIn, checkOut, nights(checkIn, checkOut)))
             })
             return fragment
+        })
+        .catch((error) => {
+            return fragment.prepend(alert(error.message));
         })
 
     return Promise.resolve(promise);

@@ -29,6 +29,41 @@
       "email": "alex@gmail.com",
       "password": "$2a$10$WLqq8.fdqupI/YyszHAtj.xlg9t5xf4.wU2TyvwAKGMv27rJGCbTi",
       "id": 6
+    },
+    {
+      "email": "ir@gmail.com",
+      "password": "$2a$10$ViNWqpzTU.6Ty1WZdhXB/uFD.tcV3XIhthit3F9BfGcQUhGf/RSi6",
+      "id": 7
+    },
+    {
+      "email": "q123@gmail.com",
+      "password": "$2a$10$nQCsztPdmm5TV2t7RgGk8.XOMJB83F99OphnRLx0kyMPckTq6X.Uu",
+      "id": 8
+    },
+    {
+      "email": "q123@gmail",
+      "password": "$2a$10$I679VRRqvnjD/UkYG9LZ/ujo3Y/fRjT3pV/N3FoomGeCzH6oKYEAW",
+      "id": 9
+    },
+    {
+      "email": "fr@a.com",
+      "password": "$2a$10$enW2ku53MogKEA2BHzWCmeIS/Yub01eLZYwX1.2pRzqgmEG1z37si",
+      "id": 10
+    },
+    {
+      "email": "ndf@b.com",
+      "password": "$2a$10$d6WvkRTYcm0mqntnbuTZieXBi0fKy9v6yWwSwX1U8X5.7S41uOk9q",
+      "id": 11
+    },
+    {
+      "email": "f@df.com",
+      "password": "$2a$10$wvj/TlBRUFPdIKY6yEJko.l/8FqfckIqVUlSu66A3713dsCRAuFda",
+      "id": 12
+    },
+    {
+      "email": "irynap@gmail.com",
+      "password": "$2a$10$fJmltnLNpPKpy0QQAs5ghuG9.GcL4AhSqzD9rddMkqzvuZenCkYHK",
+      "id": 13
     }
   ]
 }

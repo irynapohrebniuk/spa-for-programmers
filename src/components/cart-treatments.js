@@ -13,9 +13,18 @@ export const cartTreatments = () => {
     const item = (treatment) => {
 
         return (`
-         <div class="row align-items-center">
-            <div class="col col-md-5 col-sm-8">
-                 <h6>${treatment.name}</h6>
+        <div class="row align-items-center">
+            <div class="col">
+                <div class='btn btn-room text-left pl-0'>
+                    <h6>${treatment.name}</h6>
+                </div>
+                <a class="btn-del topright  bg-transparent">
+                    <i id="btn-del-t-${treatment.id}" class="fa fa-times btn" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>   
+        <div class="row align-items-center">
+            <div class="col col-md-5 col-sm-6"> 
                  <div class="text-muted">
                     <span id="price-t-${treatment.id}">${treatment.price}</span>
                     <span> $</span>
@@ -33,10 +42,7 @@ export const cartTreatments = () => {
                 <span id="total-price-t-${treatment.id}">${treatment.totalPrice} </span>
                 <span>$</span>
              </div>
-             <div class="col col-md-1 col-sm-1 btn-del bg-transparent text-center align-middle">
-                <a>
-                    <i id="btn-del-t-${treatment.id}" class="fa fa-times btn" aria-hidden="true"></i>
-                </a>
+             <div class="col col-md-1 col-sm-1">   
             </div>
          </div> 
          `);
