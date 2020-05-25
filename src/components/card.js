@@ -15,7 +15,7 @@ export const card = (room, checkIn, checkOut, nights) => {
     const fragment = $(new DocumentFragment());
     
     const card = (`
-            <div class="col-sm-12 col-md-6 col-lg-3 pb-3 pt-3">
+            <div class="col col-sm-12 col-md-6 col-lg-3 pb-3 pt-3">
                 <div id="room-${room.id}" class="card">
                     <div class="card-body">
                         <h5 class="card-title">${room.name} </h5>

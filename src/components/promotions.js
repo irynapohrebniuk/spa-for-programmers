@@ -5,7 +5,7 @@ import img3 from '../img/promotions/marriage.png'
 export const promotions = () => {
     return (`
     <div class="container">
-        <div class="row row-cols-md-3 row-cols-sm-1 pt-3 mx-auto">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 pt-3 mx-auto">
             <div class="col col-md col-sm-12" data-aos="zoom-in">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters align-items-center">

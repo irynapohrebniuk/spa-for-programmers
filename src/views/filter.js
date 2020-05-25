@@ -5,7 +5,7 @@ import { card } from '../components/card'
 export const filter = (data) => {
     
     const typeOfService = "rooms"
-    const fragment = $('<div class="row w-100">')
+    const fragment = $('<div class="row row-cols-1 row-cols-sm-1 row-cols-md-4">')
     const checkIn = data.checkIn;
     const checkOut = data.checkOut;
 
