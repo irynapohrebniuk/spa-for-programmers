@@ -30,6 +30,10 @@ AOS.init({
     delay: 100,
 });
 
+if (process.env.NODE_ENV !== 'production') {
+   console.log('Looks like we are in development mode!');
+}
+
 
 main.before(header)
 

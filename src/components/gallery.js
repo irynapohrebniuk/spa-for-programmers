@@ -1,4 +1,3 @@
-import { routeChange } from "../router/route-change";
 
 let images = require.context('../img/gallery', false);
 

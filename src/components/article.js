@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import img from '../img/gallery/night-dark-hotel-luxury-919.jpg'
+import img from '../img/gallery/night-dark.jpg'
 
 export const article = (hotel) => {
 

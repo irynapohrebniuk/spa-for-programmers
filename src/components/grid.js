@@ -3,10 +3,12 @@ let images = require.context('../img/main_carousel', false);
 const gridTwoColumns = (id1, id2) => {
 
     const gridTwoColumns = $(`
-        <div class="row align-items-center">
-            <div id=${id2} class="col col-lg-6 col-md-6 col-sm-12"></div>
-            <div id=${id1} class="col col-lg-6 col-md-6 col-sm-12 mt-2"></div>
+    <div class="container m-0 p-0">
+        <div class="row justify-content-center">
+            <div id=${id2} class="col col-lg-5 col-md-7 col-sm-12 pt-2"></div>
+            <div id=${id1} class="col col-lg-5 col-md-7 col-sm-12"></div>
         </div>
+    </div>
     `)
 
     return gridTwoColumns

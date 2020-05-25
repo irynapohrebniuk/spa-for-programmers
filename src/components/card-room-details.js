@@ -21,10 +21,10 @@ export const roomDetails = (room) => {
     
     const roomFacilities = () => {
         
-        const ul = $('<ul class="row row-cols-3 row-cols-sm-1">');
+        const ul = $('<ul class="row">');
         const facilities = room.facilities;
         for (let i = 0; i <facilities.length; i++) {
-            ul.append(`<li class="col col-sm-12"><span><i class="fas fa-check p-2"></i> ${facilities[i]}</span></li>`);
+            ul.append(`<li class="col col-md-4 col-sm-12"><span><i class="fas fa-check p-2"></i> ${facilities[i]}</span></li>`);
         }
         const fragment = $(`
         <div class="collapse" id="collapse${room.id}">

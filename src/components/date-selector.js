@@ -22,7 +22,7 @@ export const dateSelector = () => {
 
     const dateSelectorForm = $(`
         <form id="dateSelectorForm">
-            <div id="input-group" class="row no-gutters input-group p-2 mx-auto"></div>  
+            <div id="input-group" class="row no-gutters input-group p-2 m-2"></div>  
         </form>
     `);
 
@@ -52,7 +52,7 @@ export const dateSelector = () => {
 
     const searchButton = (click) => {
         const searchButton = $(`
-        <input id="search-btn" class="form-control form-control-lg btn-lg btn-dark rounded-0" type="submit" value="Search" />
+        <input id="search-btn" class="form-control form-control-lg btn btn-lg btn-outline-dark rounded-0" type="submit" value="Search" />
         `)
             .on('click', (event) => {
                 event.preventDefault();

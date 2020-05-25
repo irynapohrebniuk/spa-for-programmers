@@ -4,20 +4,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 module.exports = {
-    mode: 'development',
-    devServer: {
-        contentBase: path.join('./dist'),
-        // Enable HTML5 History support
-        historyApiFallback: true,
-        // Logging level for dev server
-        clientLogLevel: 'trace',
-        // Enable code hot replacement
-        hot: true,
-        // Open default browser after server start
-        open: true,
-        // Specify dev server port
-        port: 8080
-    },
     entry: './src/index.js',
     output: {
         filename: 'main.js',
@@ -34,22 +20,33 @@ module.exports = {
     module: {
         rules: [
             
+            // {
+            //     test: /\.(png|svg|jpe?g|gif)$/i,
+            //     use: [
+            //         {
+            //             loader: 'url-loader',
+            //             options: {
+            //                 limit: 8096,
+            //                 name: 'img/[name].[ext]'
+            //             },
+            //         },
+            //     ]
+            // },
             {
-                test: /\.(png|svg|jpe?g|gif)$/,
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 18192,
-                            name: 'img/[name].[ext]'
-                        },
-                    },
-                ]
+                   'file-loader'
+                ],
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                test: /\.(png|svg|jpg|jpe?g|gif)$/i,
                 use: [
-                    'file-loader',
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '/img/[name].[ext]'
+                        },
+                    },
                 ],
             },
             {
