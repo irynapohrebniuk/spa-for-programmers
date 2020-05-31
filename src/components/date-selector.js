@@ -1,26 +1,16 @@
 import { routeChange } from '../router/route-change'
 
+let checkIn;
+let checkOut;
+let dateSelectorForm;
+
 export const dateSelector = () => {
-    let checkIn;
-    let checkOut;
-
-    const checkInMax = new Date(new Date().setFullYear(new Date().getFullYear() + 1));
-
-    const checkOutMin = (checkIn) => {
-        let checkOutMin;
-        if (checkIn === undefined) {
-            checkOutMin = new Date(new Date().setDate(new Date().getDate() + 1));
-        } else {
-            checkOutMin = new Date(new Date(checkIn).setDate(new Date(checkIn).getDate() + 1));
-        }
-        return checkOutMin;
-    }
-
+    
     const clear = () => {
         if ($("#error-message")) $("#error-message").remove();
     }
 
-    const dateSelectorForm = $(`
+    dateSelectorForm = $(`
         <form id="dateSelectorForm">
             <div id="input-group" class="row no-gutters input-group p-2 m-2"></div>  
         </form>
@@ -82,31 +72,83 @@ export const dateSelector = () => {
 
     dateSelectorForm.find('#input-group').append(checkin, checkout,btn);
 
+    initCheckInDate();
+    initCheckOutDate();
+
+    return dateSelectorForm;
+}
+
+const checkInMax = (date) => {
+    if (date == undefined) {
+        date = new Date();
+        const oneYearPlus = date.getFullYear() + 1;
+        date.setFullYear(oneYearPlus);
+    } else {
+        const minusOneDay = date.getDate() - 1;
+        date.setDate(minusOneDay);
+    }
+    return date;
+}
+
+const checkOutMax = (date) => {
+    if (date == undefined) {
+        date = new Date();
+        const oneYearPlus = date.getFullYear() + 1;
+        const oneDayPlus = date.getDate() + 1;
+        date.setFullYear(oneYearPlus);
+        date.setDate(oneDayPlus);
+    } else {
+        const minusOneDay = date.getDate() - 1;
+        date.setDate(minusOneDay);
+    }
+    return date;
+}
+
+const checkOutMin = (date) => {
+    if (date == undefined) {
+        date = new Date();
+    } 
+    const plusOneDay = date.getDate() + 1;
+    date.setDate(plusOneDay);
+    return date;
+}
+
+function initCheckInDate() {
     dateSelectorForm.find('#checkin').datepicker({
         language: 'pl',
         position: 'bottom left',
         dateFormat: 'mm.dd.yyyy',
         minDate: new Date(),
-        maxDate: checkInMax,
+        maxDate: checkInMax(),
         onSelect: function (date) {
+            actualizeCheckOutDate(date);
             checkIn = date;
         }
     })
+}
 
+function initCheckOutDate() {
     dateSelectorForm.find('#checkout').datepicker({
         language: 'pl',
         position: 'bottom right',
         dateFormat: 'mm.dd.yyyy',
-        minDate: new Date(checkOutMin(checkIn)),
-        maxDate: checkInMax,
+        minDate: checkOutMin(),
+        maxDate: checkOutMax(),
         onSelect: function (date) {
+            actualizeCheckInDate(date);
             checkOut = date;
         }
     })
-
-    return dateSelectorForm;
 }
 
+function actualizeCheckInDate(date) {
+    dateSelectorForm.find('#checkin').datepicker({
+        maxDate: checkInMax(new Date(date))
+    })
+}
 
-
-
+function actualizeCheckOutDate(date) {
+        dateSelectorForm.find('#checkout').datepicker({
+        minDate: checkOutMin(new Date(date))
+    })
+}

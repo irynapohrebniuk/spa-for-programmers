@@ -34,7 +34,6 @@ export const loginForm = (title, buttonTitle) => {
         // Get some values from elements on the page:
         const email = $('#inputEmail').val();
         const password = $('#inputPassword').val();
-        console.log("email: ", email, " | password: ", password);
 
         let request = $.ajax({
             method: "POST",
@@ -44,16 +43,13 @@ export const loginForm = (title, buttonTitle) => {
         });
 
         request.done(function (msg) {
-            // console.log("login");
             loginForm.trigger(routeChange, { path: '/rooms' });
             $('#user-icon').html(('<i class="fas fa-user pr-3"></i>'));
             $('#user-icon-mobile').html(('<i class="fas fa-user pr-3"></i>'));
         });
 
         request.fail(function (jqXHR, textStatus, error) {
-            // console.log("41: fail().data:" + JSON.stringify(jqXHR));
-            // console.log("42: fail().status: " + textStatus);
-            // console.log("42: fail().error: " + error);
+           
             const alertMessage = alert();
             loginForm.remove();
             ($("#login_form")).append(alertMessage);

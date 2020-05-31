@@ -41,7 +41,6 @@ export class Router {
             const html = oops();
             this.outlet.empty().append(html);
         }
-
         history.pushState(data, '', data.path);
     }
 }

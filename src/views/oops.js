@@ -6,5 +6,5 @@ export const oops = () => {
         .append('<h2>OOPS</h2>')
         .append('<p>Cos poszlo nie  tak</p>');
 
-    return Promise.resolve(fragment);
+    return fragment;
 };

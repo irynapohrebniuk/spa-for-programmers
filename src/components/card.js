@@ -36,7 +36,7 @@ export const card = (room, checkIn, checkOut, nights) => {
                 <button 
                     data-toggle="modal" 
                     data-name="${room.name}" 
-                    data-price="${room.price}" 
+                    data-price="${nights * room.price}" 
                     data-target="#spaModal">
                 </button>`)
                 .addClass("btn btn-md btn-dark p-2 mb-5")

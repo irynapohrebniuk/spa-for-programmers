@@ -55,11 +55,9 @@ export let Bucket = (function() {
             updateRoom(id, quantity, nights) {
                 rooms.map(room => {
                     if (room.id == id) {
-                        console.log("nights = ", nights)
                         room.quantity = quantity;
                         room.nights = nights;
                         room.totalPrice = room.quantity * room.price * room.nights;
-                        console.log(room.quantity, room.price, room.nights);
                         localStorage.setItem('rooms', JSON.stringify(rooms));
                     }
                 })

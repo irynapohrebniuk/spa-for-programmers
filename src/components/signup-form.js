@@ -35,7 +35,6 @@ export const signupForm = (title, buttonTitle) => {
         // Get some values from elements on the page:
         const email = $('#inputEmail').val();
         const password = $('#inputPassword').val();
-        console.log("email: ", email, " | password: ", password);
         // Add the new user to users.json
         let request = $.ajax({
             method: "POST",
@@ -45,7 +44,6 @@ export const signupForm = (title, buttonTitle) => {
         });
 
         request.done(function (msg) {
-            console.log("sign up is successful");
             alert("Data Saved: " + JSON.stringify(msg));
             $('#sign-up-msg').append('<div class="topcenter bg-success">Welcome on board!</div>');
             $('#user-icon').html(('<i class="fas fa-user pr-3"></i>'));
@@ -54,9 +52,6 @@ export const signupForm = (title, buttonTitle) => {
         });
 
         request.fail(function (jqXHR, textStatus, error) {
-            console.log("41: fail().data:" + JSON.stringify(jqXHR));
-            console.log("42: fail().status: " + textStatus);
-            console.log("42: fail().error: " + error);
             $('#sign-up-msg').append('<div class="bg-warn">Please try again</div>');
         });
     });

@@ -58,7 +58,6 @@ export const cartRooms = () => {
     ul.find('.btn-room').on('click', (e) => {
         const btn_id = e.target.id;
         const id = btn_id.slice(9);
-        console.log("room id: ", e.target, id);
         ul.trigger(routeChange, { path: '/room', id: id})
     })
 

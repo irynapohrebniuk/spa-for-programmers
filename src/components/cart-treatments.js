@@ -55,7 +55,6 @@ export const cartTreatments = () => {
     ul.find('.btn-del').on('click', (e) => {
         const btn_id = e.target.id;
         const id = btn_id.slice(10);
-        console.log("id", id);
         let row = $('#cart-item-t-' + id);
         row.remove();
         bucket.deleteTreatment(id);

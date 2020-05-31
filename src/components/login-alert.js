@@ -18,7 +18,6 @@ export const alert = () => {
 
         const login = loginForm('Log in','Log In');
         column.append(login);
-        console.log('add login form again', column, login);
         alert.remove();
     });
     alert.append(alertButton);
