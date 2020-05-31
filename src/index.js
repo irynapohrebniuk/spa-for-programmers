@@ -14,6 +14,7 @@ import './css/it-spa.scss';
 import { header } from './components/header'
 import { footer } from './components/footer'
 import { Router } from "./router/router";
+import { modalWindow } from './components/modal-window';
 
 const main = $('<main class="container-fluid">');
 $('body').append(main);
@@ -36,6 +37,14 @@ if (process.env.NODE_ENV !== 'production') {
 
 
 main.before(header)
-
+main.before(modalWindow);
 main.after(footer)
 
+$('#spaModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var name = button.data('name');
+    var price = button.data('price');
+    var modal = $(this);
+    modal.find('#product_name').text(name);
+    modal.find('#product_price').text(price + '$');
+})

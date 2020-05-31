@@ -2,6 +2,7 @@ import $ from 'jquery';
 import { Bucket } from "../bucket";
 import { carousel } from './carousel';
 import { cardIcons } from './card-icons';
+import { alert } from './alert';
 
 export const card = (room, checkIn, checkOut, nights) => {
 
@@ -31,7 +32,13 @@ export const card = (room, checkIn, checkOut, nights) => {
         const addRoomButton = (room, checkIn, checkOut, nights) => {
             let bucket = Bucket.getInstance();
             
-            const button = $('<button></button>')
+            const button = $(`
+                <button 
+                    data-toggle="modal" 
+                    data-name="${room.name}" 
+                    data-price="${room.price}" 
+                    data-target="#spaModal">
+                </button>`)
                 .addClass("btn btn-md btn-dark p-2 mb-5")
                 .css("width", "60%")
                 .html('Reserve')
@@ -40,6 +47,7 @@ export const card = (room, checkIn, checkOut, nights) => {
                     const totalPrice = nights * room.price * quantity;
                     bucket.addRoom(room.id, room.name, room.price, nights, quantity, totalPrice, checkIn, checkOut);
                 });
+                
             return button;
         }
         

@@ -1,9 +1,10 @@
 import $ from 'jquery';
 import { Bucket } from "../bucket";
 import img from "../img/treatments/keyboard.jpg";
+import { modalWindow } from './modal-window';
 
 export const cardTreatment = (treatment) => {
-    
+
     
     const fragment = $(new DocumentFragment());
     
@@ -18,6 +19,7 @@ export const cardTreatment = (treatment) => {
                     </div>
                 </div>
             </div>
+        
         `);
 
     fragment.find('.card').append(centerDiv);
@@ -29,7 +31,13 @@ export const cardTreatment = (treatment) => {
 
 const cartButton = treatment => {
     let bucket = Bucket.getInstance();
-    const button = $('<button></button>')
+    const button = $(`
+        <button 
+            data-toggle="modal" 
+            data-name="${treatment.name}" 
+            data-price="${treatment.price}" 
+            data-target="#spaModal">
+        </button>`)
         .addClass("btn btn-md btn-outline-dark p-2 mb-5")
         .css("width", "60%")
         .html('Reserve')
@@ -43,3 +51,5 @@ const cartButton = treatment => {
 const centerDiv = () => {
     return $('<div></div>').addClass("text-center");
 }
+
+
